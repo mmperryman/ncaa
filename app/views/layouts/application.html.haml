@@ -7,7 +7,11 @@
     = csrf_meta_tag
   %body
     #nav
-      =link_to "Register", new_user_path
-      =link_to "Login", :login
+      -if current_user
+        =link_to "Edit Profile", edit_user_path(current_user.id)
+        = link_to "Logout", :logout
+      -else
+        =link_to "Register", new_user_path
+        =link_to "Login", :login
   =yield
 
