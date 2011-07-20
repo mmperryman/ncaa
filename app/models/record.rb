@@ -1,4 +1,4 @@
 class Record < ActiveRecord::Base
-  has_one :team
+  belongs_to :team
   has_one :period
 end

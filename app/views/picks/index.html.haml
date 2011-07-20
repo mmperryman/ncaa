@@ -1,13 +1,25 @@
+=javascript_include_tag 'picker'
+
+=link_to "Home", root_path
+=link_to "Team List", :teams
+%br
 %table
   %tr
-    %th Your Current Picks:
+    %th
+      Your Current Picks Total 2010 Wins:
+      #total_wins= current_user.prev_win_total
+      Your Current Picks Total 2011 Wins:
+      #total_wins= current_user.current_win_total
   - if @picks.empty?
     %tr
-      %td You have NONE!
+      %td You have NO picks yet!
   - else
-    -for pick in @picks
-      - team = pick.team
+    -@picks.each do |pick|
       %tr
-        %td= team.name
-        %td= team.short_name
-        %td= team.mascot
+        %td= pick.team.name
+        %td= pick.team.short_name
+        %td= pick.team.mascot
+        %td= pick.team.prev_record.wins
+="*"*50
+=render 'form'
+

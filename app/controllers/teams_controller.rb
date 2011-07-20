@@ -9,12 +9,13 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
+    @team.records.build(:period_id => Period.find_by_year('2010'), :wins => 0)
   end
 
   def create
     @team = Team.new(params[:team])
     if @team.save
-      redirect_to @team, :notice => "Successfully created team."
+      redirect_to :teams, :notice => "Successfully created team."
     else
       render :action => 'new'
     end

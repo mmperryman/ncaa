@@ -7,6 +7,9 @@
 %p
   %strong Mascot:
   = @team.mascot
+%p
+  %strong 2010 Wins:
+  = @team.prev_record.wins.to_s
 
 %p
   = link_to "Edit", edit_team_path(@team)

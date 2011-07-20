@@ -1,13 +1,17 @@
+=link_to "Home", root_path
+=link_to "My Picks List", :picks
 %table
   %tr
     %th Name
     %th Short name
     %th Mascot
+    %th 2010 Wins
   - for team in @teams
     %tr
       %td= team.name
       %td= team.short_name
       %td= team.mascot
+      %td= team.prev_record.wins if team.prev_record
       %td= link_to 'Show', team
       %td= link_to 'Edit', edit_team_path(team)
       %td= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete

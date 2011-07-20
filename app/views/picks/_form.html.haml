@@ -1,8 +1,15 @@
-= form_for @pick do |f|
-  = f.error_messages
-  %p
-    = f.label :name
-    %br
-    = f.text_field :name
-  %p
-    = f.submit
+-#picks form
+
+%table
+  %tr
+    %th 
+    %th Team Name
+    %th Mascot
+    %th 2010 Wins
+  -Team.all.each do |team|
+    %tr
+      %td
+        %input{:type =>'checkbox', :id => "team_#{team.id}"}
+      %td= team.name
+      %td= team.mascot
+      %td= team.prev_record.wins

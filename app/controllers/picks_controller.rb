@@ -1,6 +1,6 @@
 class PicksController < ApplicationController
   def index
-    @picks = Pick.all
+    @picks = current_user.picks#(:include => :team)
   end
 
   def show
