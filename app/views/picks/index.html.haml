@@ -1,0 +1,13 @@
+%table
+  %tr
+    %th Your Current Picks:
+  - if @picks.empty?
+    %tr
+      %td You have NONE!
+  - else
+    -for pick in @picks
+      - team = pick.team
+      %tr
+        %td= team.name
+        %td= team.short_name
+        %td= team.mascot

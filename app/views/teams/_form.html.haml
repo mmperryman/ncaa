@@ -1,0 +1,20 @@
+= form_for @team do |team_form|
+  %p
+    = team_form.label :name
+    %br
+    = team_form.text_field :name
+  %p
+    = team_form.label :short_name
+    %br
+    = team_form.text_field :short_name
+  %p
+    = team_form.label :mascot
+    %br
+    = team_form.text_field :mascot
+  %p
+    -team_form.fields_for :records do |record_form|
+      =record_form.label :wins
+      %br
+      =record_form.text_field :wins
+  %p
+    = team_form.submit

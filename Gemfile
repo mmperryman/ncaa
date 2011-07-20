@@ -9,6 +9,8 @@ gem 'pg'
 gem 'mysql2', ">= 0.2.0", "< 0.3.0"
 gem 'haml'
 gem 'authlogic'
+gem 'nifty-generators'
+gem 'mocha'
 
 # Use unicorn as the web server
 # gem 'unicorn'

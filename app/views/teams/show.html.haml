@@ -1,0 +1,16 @@
+%p
+  %strong Name:
+  = @team.name
+%p
+  %strong Short Name:
+  = @team.short_name
+%p
+  %strong Mascot:
+  = @team.mascot
+
+%p
+  = link_to "Edit", edit_team_path(@team)
+  |
+  = link_to "Destroy", @team, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", teams_path

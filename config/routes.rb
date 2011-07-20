@@ -1,6 +1,4 @@
 Ncaa::Application.routes.draw do
-  resources :users
-
   get "home/index"
 
   resources :users, :user_sessions
@@ -8,6 +6,8 @@ Ncaa::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy', :as => :logout
   
   root :to => "home#index"
+  resources :picks
+  resources :teams  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
