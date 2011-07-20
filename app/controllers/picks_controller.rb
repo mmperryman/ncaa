@@ -3,6 +3,9 @@ class PicksController < ApplicationController
     @picks = current_user.picks#(:include => :team)
   end
 
+  def overall
+  end
+  
   def show
     @pick = Pick.find(params[:id])
   end

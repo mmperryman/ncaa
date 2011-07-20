@@ -3,23 +3,25 @@
 =link_to "Home", root_path
 =link_to "Team List", :teams
 %br
-%table
-  %tr
-    %th
+.header
+  .subheader
+    .wins_total
+      Number of Teams Picked:
+      #total_teams_picked= 0.to_s + " Teams Selected"
       Your Current Picks Total 2010 Wins:
-      #total_wins= current_user.prev_win_total
+      #prev_total_wins= current_user.prev_win_total
       Your Current Picks Total 2011 Wins:
-      #total_wins= current_user.current_win_total
+      #current_total_wins= current_user.current_win_total
   - if @picks.empty?
-    %tr
-      %td You have NO picks yet!
+    %div
+      .no_picks You have NO picks yet!
   - else
     -@picks.each do |pick|
-      %tr
-        %td= pick.team.name
-        %td= pick.team.short_name
-        %td= pick.team.mascot
-        %td= pick.team.prev_record.wins
+      .pick_team
+        %span.pick_field= pick.team.name
+        %span.pick_field= pick.team.short_name
+        %span.pick_field= pick.team.mascot
+        %span.pick_field= pick.team.prev_record.wins
 ="*"*50
 =render 'form'
 
