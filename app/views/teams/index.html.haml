@@ -6,7 +6,7 @@
     %th Short name
     %th Mascot
     %th 2010 Wins
-  - for team in @teams
+  - @teams.each do |team|
     %tr
       %td= team.name
       %td= team.short_name
