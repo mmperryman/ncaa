@@ -9,9 +9,10 @@
       Number of Teams Picked:
       #total_teams_picked= 0.to_s + " Teams Selected"
       Your Current Picks Total 2010 Wins:
-      #prev_total_wins= current_user.prev_win_total
+      %span#prev_total_wins{:style=>'font-weight:bold'}= current_user.prev_win_total
+      %div 
       Your Current Picks Total 2011 Wins:
-      #current_total_wins= current_user.current_win_total
+      %span#current_total_wins{:style=>'font-weight:bold'}= current_user.current_win_total
   - if @picks.empty?
     %div
       .no_picks You have NO picks yet!

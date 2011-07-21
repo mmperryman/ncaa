@@ -1,15 +1,19 @@
 -#picks form
 
-%table
-  %tr
-    %th 
-    %th Team Name
-    %th Mascot
-    %th 2010 Wins
-  -Team.all.each do |team|
-    %tr
-      %td
-        %input{:type =>'checkbox', :id => "team_#{team.id}"}
-      %td= team.name
-      %td= team.mascot
-      %td= team.prev_record.wins
+#teams
+  #teams_header
+    %span 
+    %span Team Name
+    %span Mascot
+    %span 2010 Wins
+    #results
+      -Team.all.dissect(2).each_with_index do |page_of_teams, index|
+        %div{:id => "p#{(index+1).to_s}", :style => "display:none;"}
+          -page_of_teams.each do |team|
+            .result
+              %span
+                %input{:type =>'checkbox', :id => "team_#{team.id}"}
+              %span= team.name
+              %span= team.mascot
+              %span= team.prev_record.wins
+#page_maker
