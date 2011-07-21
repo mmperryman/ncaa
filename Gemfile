@@ -11,7 +11,8 @@ gem 'haml'
 gem 'authlogic'
 gem 'nifty-generators'
 gem 'mocha'
-gem "jquery-rails"
+gem 'jquery-rails'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
