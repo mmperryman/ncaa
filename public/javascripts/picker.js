@@ -20,11 +20,10 @@ function countChecked(el) {
   var n = $("input:checked").length;
   if (n > 5) {
     el.attr('checked', false);
-    el.closest('.result').effect('highlight', {color:'red'}, 500);
     n = $("input:checked").length;
     }
   else {
-    el.closest('.result').effect('highlight', {color:'green'}, 500);
+    el.closest('.result').effect('highlight', 500);
     }
   $("#total_teams_picked").text(n + " Teams Selected.");
 }
