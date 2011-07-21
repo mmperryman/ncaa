@@ -2,7 +2,35 @@ $(function(){
   
   $("#p1").addClass('_current');
   $("#p1").show();
-	$("#page_maker").paginate({
+  initPagination();
+
+  
+  $(':checkbox').change(function(){
+
+    countChecked($(this));
+    handle_update_total();
+  })
+})
+
+function handle_update_total(){
+  $('#prev_total_wins').text("OVER 9000");
+}
+
+function countChecked(el) {
+  var n = $("input:checked").length;
+  if (n > 5) {
+    el.attr('checked', false);
+    el.closest('.result').effect('highlight', {color:'red'}, 500);
+    n = $("input:checked").length;
+    }
+  else {
+    el.closest('.result').effect('highlight', {color:'green'}, 500);
+    }
+  $("#total_teams_picked").text(n + " Teams Selected.");
+}
+
+function initPagination() {
+  $("#page_maker").paginate({
 		count: 10,
 		start: 1,
 		display: 3,
@@ -14,25 +42,8 @@ $(function(){
 		images: false,
 		mouse: 'press',
 		onChange: function(page){
-			$('._current','#results').removeClass('_current').hide();
-			$('#p'+page).addClass('_current').show();
+			$('._current','#results').removeClass('_current').hide("slow");
+			$('#p'+page).addClass('_current').show("slow");
 			}
 	});
-  
-  $(':checkbox').change(function(){
-    countChecked();
-    handle_update_total();
-  })
-})
-
-function handle_update_total(){
-  $('#prev_total_wins').text("OVER 9000");
 }
-
-function countChecked() {
-  var n = $("input:checked").length;
-  if (n > 5)
-    alert('busted');
-  $("#total_teams_picked").text(n + " Teams Selected.");
-}
-

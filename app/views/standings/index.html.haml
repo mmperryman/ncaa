@@ -1,0 +1,21 @@
+=link_to "Home", root_path
+=link_to "Team List", :teams
+=link_to "My Picks List", :picks
+%h1 Overall Standings
+%table
+  %tr
+    %th TotalW
+    %th Username
+    %th T1(Wins)
+    %th T2(Wins)
+    %th T3(Wins)
+    %th T4(Wins)
+    %th T5(Wins)                
+  -@users.each do |user|
+    %tr
+      %td 0
+      %td= user.username
+      -user.teams.each do |team|
+        %td= "#{team.short_name}(#{team.current_record.wins.to_s})"
+  
+  

@@ -12,7 +12,7 @@ gem 'authlogic'
 gem 'nifty-generators'
 gem 'mocha'
 gem 'jquery-rails'
-
+gem 'paperclip'
 
 # Use unicorn as the web server
 # gem 'unicorn'

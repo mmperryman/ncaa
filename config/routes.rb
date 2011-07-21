@@ -11,6 +11,7 @@ Ncaa::Application.routes.draw do
       get :overall
     end
   end    
+  resources :standings, :only => :index
   resources :teams  
   # The priority is based upon order of creation:
   # first created -> highest priority.
