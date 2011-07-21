@@ -13,7 +13,7 @@
             .result
               %span
                 %input{:type =>'checkbox', :id => "team_#{team.id}"}
-              %span= team.name
-              %span= team.mascot
-              %span= team.prev_record.wins
+              %span.name_field= team.name
+              %span.mascot_field= team.mascot
+              %span.wins_field= team.prev_record.wins
 #page_maker

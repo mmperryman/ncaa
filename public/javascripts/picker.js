@@ -6,26 +6,29 @@ $(function(){
 
   
   $(':checkbox').change(function(){
-
-    countChecked($(this));
-    handle_update_total();
+    if (countChecked($(this))) {
+      handle_update_total($(this));
+      }  
   })
 })
 
-function handle_update_total(){
-  $('#prev_total_wins').text("OVER 9000");
+function handle_update_total(el){
+  var num = parseInt($(el.closest('.result').children('.wins_field')[0]).text());
+  var pre = parseInt($('#prev_total_wins').text());
+  if (el.attr('checked'))
+    $('#prev_total_wins').text(pre + num);
+  else
+    $('#prev_total_wins').text(pre - num);
 }
 
 function countChecked(el) {
-  var n = $("input:checked").length;
-  if (n > 5) {
+  if ($("input:checked").length > 1) 
     el.attr('checked', false);
-    n = $("input:checked").length;
-    }
   else {
     el.closest('.result').effect('highlight', 500);
+    $("#total_teams_picked").text($("input:checked").length + " Teams Selected.");
+    return true;
     }
-  $("#total_teams_picked").text(n + " Teams Selected.");
 }
 
 function initPagination() {
