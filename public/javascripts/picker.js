@@ -8,9 +8,20 @@ $(function(){
   $(':checkbox').change(function(){
     if (countChecked($(this))) {
       handle_update_total($(this));
+      handle_pick_post($(this));
       }  
   })
 })
+
+function handle_pick_post(el){
+  var params =
+      {
+        team_id: el[0].id.split('team_')[1],
+        _destroy: (el.attr('checked')) ? 'false' : 'true'
+      }
+  var url = '/picks'    
+  $.post(url, params, function(data) {})
+}
 
 function handle_update_total(el){
   var num = parseInt($(el.closest('.result').children('.wins_field')[0]).text());
@@ -33,7 +44,7 @@ function countChecked(el) {
 
 function initPagination() {
   $("#page_maker").paginate({
-		count: 10,
+		count: 5,
 		start: 1,
 		display: 3,
 		border: false,
@@ -44,6 +55,9 @@ function initPagination() {
 		images: false,
 		mouse: 'press',
 		onChange: function(page){
+		  var current_page = $('._current')[0].id.split('p')[1]
+      if (page == current_page)
+        return false;
 			$('._current','#results').removeClass('_current').hide("slow");
 			$('#p'+page).addClass('_current').show("slow");
 			}

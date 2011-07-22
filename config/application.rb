@@ -40,3 +40,4 @@ module Ncaa
     config.filter_parameters += [:password]
   end
 end
+

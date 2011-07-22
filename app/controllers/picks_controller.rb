@@ -6,4 +6,16 @@ class PicksController < ApplicationController
       @picks = current_user.picks#(:include => :team)
     end  
   end
+  
+  def create
+    current_period = Period.find_by_year('2011')
+    if params[:_destroy] == 'true'
+      @pick = Pick.where('user_id = ? and team_id = ? and period_id = ?', current_user.id, params[:team_id], current_period.id)
+      @pick.destroy_all
+    else  
+      @pick = Pick.create(:user_id => current_user, :period_id => current_period.id, :team_id => params[:team_id])
+    end  
+    render :text => ""
+  end
+
 end

@@ -8,22 +8,18 @@
   .subheader
     .wins_total
       Number of Teams Picked:
-      #total_teams_picked= 0.to_s + " Teams Selected"
+      #total_teams_picked= current_user.picks.count.to_s + " Teams Selected"
       Your Current Picks Total 2010 Wins:
       %span#prev_total_wins{:style=>'font-weight:bold'}= current_user.prev_win_total
       %div 
       Your Current Picks Total 2011 Wins:
       %span#current_total_wins{:style=>'font-weight:bold'}= current_user.current_win_total
   - if @picks.empty?
-    %div
+    #picks
       .no_picks You have NO picks yet!
   - else
     -@picks.each do |pick|
-      .pick_team
-        %span.pick_field= pick.team.name
-        %span.pick_field= pick.team.short_name
-        %span.pick_field= pick.team.mascot
-        %span.pick_field= pick.team.prev_record.wins
+      =render :partial => 'pick', :object => pick
 ="*"*50
 =render 'form'
 

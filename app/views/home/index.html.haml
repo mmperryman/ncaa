@@ -2,37 +2,28 @@
 =link_to "My Picks", :picks
 =link_to "Standings", :standings
 
-%p
-  To Do List:
-  %ul 
-    %li Add Layout (duh)
-    %li
-      %strike Pre-check the selected teams
-    %li 
-      %strike Fix sorting chunking
-    %li 
-      %strike Get Updated CSV      
-    %li Cancel page turn event if already on that page
-    %li Ajax Post on check toggle
-    %li Update total wins on check toggle
-    %li Update selected list on check toggle
-    %li Add warning/info box on front page if over limit
-    %li 
-      %strike Add Rules to front page
-    %li +WIN -WIN buttons to team index list for easy updating    
-    %li restrict access to overall (picks) until deadline
-    %li restrict access to team pages
-    %li restrict access to user pages
-    %li restrict access to edit picks after deadline
+:javascript
+  today  = new Date();
+  todayEpoch  = today.getTime();
+
+  target = new Date("1 September, 2011"); 
+  targetEpoch = target.getTime();
+
+  daysLeft = Math.floor(((targetEpoch - todayEpoch) / (60*60*24)) / 1000);
+  hoursLeft = (daysLeft % 24)
+
+%h6
+  %span
+    Season starts in 
+    :javascript
+      document.write(daysLeft + " Days, " + hoursLeft + " Hours");
+  %span . Are you ready?
+
+=render 'warning'
+
     
-  Nice-to-haves:
-  %ul
-    %li Add Bulletin Board blog
-    %li Scoreboard for show picks view after deadline
-    %li Add Leaderboard to front page
-    %li Countdown to when picks locked
-    
-    
-=render 'rules'
-=render 'money'
-=render 'faq'
+=render 'todo'
+-#
+  =render 'rules'
+  =render 'money'
+  =render 'faq'

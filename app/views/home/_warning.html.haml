@@ -1,0 +1,4 @@
+-if current_user.prev_win_total > WIN_THRESHOLD
+  .warning
+    %h5{:style => 'color:red'}
+      ="You are currently over the #{WIN_THRESHOLD} win threshold.  If you do not change your teams before the season starts, your pool entry will be invalid."
