@@ -14,14 +14,8 @@ class Team < ActiveRecord::Base
 end
 
 class Array
-  def dissect(number_of_chunks)
-    chunks = (1..number_of_chunks).collect { [] }
-    while self.any?
-      chunks.each do |a_chunk|
-        a_chunk << self.shift if self.any?
-      end
-    end
-    chunks
+  def dissect(chunk_size)
+    each_slice(chunk_size).reduce([]) {|x,y| x += [y] }
   end
   alias / chunk
 end

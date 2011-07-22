@@ -5,16 +5,34 @@
 %p
   To Do List:
   %ul 
-    %li Add Layout
+    %li Add Layout (duh)
+    %li
+      %strike Pre-check the selected teams
+    %li 
+      %strike Fix sorting chunking
+    %li 
+      %strike Get Updated CSV      
+    %li Cancel page turn event if already on that page
+    %li Ajax Post on check toggle
     %li Update total wins on check toggle
     %li Update selected list on check toggle
-    %li Add Rules to front page    
-    %li Add Leaderboard to front page
-    %li +WIN button to team list for easy updating    
-    %li Get Updated CSV
+    %li Add warning/info box on front page if over limit
+    %li 
+      %strike Add Rules to front page
+    %li +WIN -WIN buttons to team index list for easy updating    
+    %li restrict access to overall (picks) until deadline
+    %li restrict access to team pages
+    %li restrict access to user pages
+    %li restrict access to edit picks after deadline
     
   Nice-to-haves:
   %ul
     %li Add Bulletin Board blog
-    %li Scoreboard for show picks view
+    %li Scoreboard for show picks view after deadline
+    %li Add Leaderboard to front page
+    %li Countdown to when picks locked
     
+    
+=render 'rules'
+=render 'money'
+=render 'faq'

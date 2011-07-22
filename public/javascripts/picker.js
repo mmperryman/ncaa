@@ -22,7 +22,7 @@ function handle_update_total(el){
 }
 
 function countChecked(el) {
-  if ($("input:checked").length > 1) 
+  if ($("input:checked").length > 5) 
     el.attr('checked', false);
   else {
     el.closest('.result').effect('highlight', 500);
