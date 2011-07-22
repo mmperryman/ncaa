@@ -13,7 +13,7 @@ class PicksController < ApplicationController
       @pick = Pick.where('user_id = ? and team_id = ? and period_id = ?', current_user.id, params[:team_id], current_period.id)
       @pick.destroy_all
     else  
-      @pick = Pick.create(:user_id => current_user, :period_id => current_period.id, :team_id => params[:team_id])
+      @pick = Pick.create(:user_id => current_user.id, :period_id => current_period.id, :team_id => params[:team_id])
     end  
     render :text => ""
   end
