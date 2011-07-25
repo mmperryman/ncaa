@@ -4,6 +4,9 @@
 - if current_user && current_user.admin?
   =link_to "Users", :users
   =link_to "Team List", :teams
+  
+- if !current_user
+  #login_notice You must login in order to select teams.  
 :javascript
   today  = new Date();
   todayEpoch  = today.getTime();
