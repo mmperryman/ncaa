@@ -1,0 +1,5 @@
+.notice_header
+  - if flash[:notice]
+    .flash_notice= flash[:notice]
+  - if flash[:error]
+    .flash_error= flash[:error]

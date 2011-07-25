@@ -1,7 +1,8 @@
 
 body {
   margin:auto;
-  background: #F6F6F6 url('/images/goodnogood_orig.JPG') top center no-repeat;*/
+  background: #F6F6F6 url('/images/goodnogood_orig.JPG') top center no-repeat;
+  background-size: 100%;
 }
 
 div.wrapper {
@@ -10,21 +11,22 @@ div.wrapper {
 }
 
 /* Header */
-#header {
-  border: 1px solid green;
-  position: relative;
-  margin-bottom: 24px;
-  height: 101px;
-}
 
 #login_wrapper {
-  border:1px solid red;
 }
 
 #nav_wrapper {
-  border:1px solid blue;
 }
 
+.login_container {
+  float: right;
+  color: white;
+  background: black;
+}
+
+.login_container a{
+  color: white;
+}
 /* Content */
 #content_body {
   background: transparent url('/images/content_bg.png') top center repeat-y;
@@ -44,6 +46,11 @@ div.wrapper {
 }
 
 /* Pages */
+.notice_header {
+  width: 875px;
+  margin-left: 50px;
+}
+
 .page_header {
   width: 890px;
   margin: 0 auto 24px auto;
