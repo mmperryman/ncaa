@@ -3,7 +3,9 @@ class User < ActiveRecord::Base
   
   has_many :picks, :dependent => :destroy
   has_many :teams, :through => :picks
-  
+
+  has_many :payments, :dependent => :destroy
+  accepts_nested_attributes_for :payments
   
   def current_win_total
     total = 0
@@ -19,5 +21,9 @@ class User < ActiveRecord::Base
       total += pick.team.prev_record.wins.to_i
     end
     total
+  end
+  
+  def admin?
+    username == "Pman"
   end
 end

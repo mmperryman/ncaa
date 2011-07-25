@@ -1,7 +1,9 @@
-=link_to "Team List", :teams
-=link_to "My Picks", :picks
+- if current_user
+  =link_to "My Picks", :picks
 =link_to "Standings", :standings
-
+- if current_user && current_user.admin?
+  =link_to "Users", :users
+  =link_to "Team List", :teams
 :javascript
   today  = new Date();
   todayEpoch  = today.getTime();

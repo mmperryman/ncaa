@@ -1,3 +1,10 @@
+- if current_user && current_user.admin?
+  =link_to "Home", root_path
+  =link_to "My Picks", :picks
+  =link_to "Standings", :standings
+  =link_to "Users", :users
+  =link_to "Team List", :teams
+
 %h1 Listing users
 #notice= notice
 %table
@@ -5,7 +12,9 @@
     %th Username
     %th Email
     %th Name
-    %th
+    %th Paid?
+    %th Teams Picked
+    %th 2010 Total
     %th
     %th
   -@users.each do |user|
@@ -13,6 +22,9 @@
       %td= user.username
       %td= user.email
       %td= user.first + " " + user.last
+      %td= user.payments.first.paid? if !user.payments.empty?      
+      %td= user.picks.select{|p| p.period_id == Period.find_by_year('2011').id}.count.to_s
+      %td= user.prev_win_total
       %td= link_to 'Show', user
       %td= link_to 'Edit', edit_user_path(user)
       %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete

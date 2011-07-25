@@ -1,0 +1,25 @@
+%p#notice= notice
+
+%p
+  %b Username:
+  = @user.username
+
+%p
+  %b Email:
+  = @user.email
+
+%p
+  %b First:
+  = @user.first 
+
+%p
+  %b Last:
+  = @user.last
+  
+%p
+  %b Paid:
+  = @user.payments.first.paid? if !@user.payments.empty?  
+
+
+= link_to 'Edit', edit_user_path(@user)
+= link_to 'Back', users_path 

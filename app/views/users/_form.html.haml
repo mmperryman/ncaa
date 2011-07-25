@@ -24,5 +24,10 @@
   .field
     =f.label :password_confirmation
     =f.password_field :password_confirmation
+  -if current_user.admin?
+    .field
+      =f.fields_for :payments, @user.payments.first do |payment_form|
+        =payment_form.label :paid
+        =payment_form.check_box :paid
   .actions
     = f.submit
