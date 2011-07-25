@@ -1,9 +1,9 @@
 - if current_user
-  =link_to "My Picks", :picks
-=link_to "Standings", :standings
+  %button=link_to "My Picks", :picks
+%button=link_to "Standings", :standings
 - if current_user && current_user.admin?
-  =link_to "Users", :users
-  =link_to "Team List", :teams
+  %button=link_to "Users", :users
+  %button=link_to "Team List", :teams
   
 - if !current_user
   #login_notice You must login in order to select teams.  
@@ -25,8 +25,6 @@
   %span . Are you ready?
 
 =render 'warning'
-
-    
 =render 'todo'
 -#
   =render 'rules'

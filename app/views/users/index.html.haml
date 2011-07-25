@@ -1,9 +1,9 @@
 - if current_user && current_user.admin?
-  =link_to "Home", root_path
-  =link_to "My Picks", :picks
-  =link_to "Standings", :standings
-  =link_to "Users", :users
-  =link_to "Team List", :teams
+  %button=link_to "Home", root_path
+  %button=link_to "My Picks", :picks
+  %button=link_to "Standings", :standings
+  %button=link_to "Users", :users
+  %button=link_to "Team List", :teams
 
   %h1 Listing users
   #notice= notice

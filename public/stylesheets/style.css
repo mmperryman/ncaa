@@ -1,46 +1,91 @@
-.container {
-  width: 710px;
-}
 
 body {
   margin:auto;
-  width:70%;
-  background-color:#b0e0e6;
-  border: 2px solid black;
+  background: #F6F6F6 url('/images/goodnogood_orig.JPG') top center no-repeat;*/
 }
 
-header {
-/*  padding-top: 20px;*/
+div.wrapper {
+  width: 960px;
+  margin: 0 auto;
 }
 
-header img {
-  padding: 1em;
-  background: #fff;
+/* Header */
+#header {
+  border: 1px solid green;
+  position: relative;
+  margin-bottom: 24px;
+  height: 101px;
 }
 
-section {
-  margin-top: 1em;
-  font-size: 120%;
-  padding: 20px;
-  background: #fff;
+#login_wrapper {
+  border:1px solid red;
 }
 
-section h1 {
-  font-size: 200%;
+#nav_wrapper {
+  border:1px solid blue;
 }
 
-/* Links */
-
-a {
-  color: #09c;
-  text-decoration: none;
+/* Content */
+#content_body {
+  background: transparent url('/images/content_bg.png') top center repeat-y;
+  position: relative;
 }
 
-a:hover {
-  color: #069;
+#content_header {
+  font-size: 0.01em;
+  height: 12px;
+  background: transparent url('/images/content_top.png') top center no-repeat;
+}
+
+#content_footer {
+  background: transparent url('/images/content_bottom.png') top center no-repeat;
+  height: 12px;
+  margin-bottom: 24px;
+}
+
+/* Pages */
+.page_header {
+  width: 890px;
+  margin: 0 auto 24px auto;
+  padding-top: 13px;
+}
+
+.page_header img {
+  margin-top: 7px;
+  float: left;
+}
+.page_content {
+  width: 870px;
+  margin: 0px 40px;
+}
+/* Sunken Well */
+
+.sunken_well {
+  padding: 8px 12px 10px 12px;
+  background: #888 url(/images/sunken_well_bg.png) top center repeat-x;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border: 1px solid #BBB;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #FFF;
+  margin: 0 18px 18px 18px;  
+  position: relative;
+  color: #FFF;
+}
+
+.sunken_well table {
+  margin-bottom: 0;
+}
+
+.sunken_well a,
+.sunken_well a:link,
+.sunken_well a:visited {
+  color: #FFF;
   text-decoration: underline;
 }
-
-a:visited {
-  color: #069;
+  
+.sunken_well a:hover,
+.sunken_well a:focus {
+  color: #FFF;
+  text-decoration: none;
 }
