@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110721210828) do
+ActiveRecord::Schema.define(:version => 20110725132842) do
+
+  create_table "payments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "period_id"
+    t.boolean  "paid",       :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "periods", :force => true do |t|
     t.string   "year"

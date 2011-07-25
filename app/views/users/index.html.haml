@@ -5,29 +5,31 @@
   =link_to "Users", :users
   =link_to "Team List", :teams
 
-%h1 Listing users
-#notice= notice
-%table
-  %tr
-    %th Username
-    %th Email
-    %th Name
-    %th Paid?
-    %th Teams Picked
-    %th 2010 Total
-    %th
-    %th
-  -@users.each do |user|
+  %h1 Listing users
+  #notice= notice
+  %table
     %tr
-      %td= user.username
-      %td= user.email
-      %td= user.first + " " + user.last
-      %td= user.payments.first.paid? if !user.payments.empty?      
-      %td= user.picks.select{|p| p.period_id == Period.find_by_year('2011').id}.count.to_s
-      %td= user.prev_win_total
-      %td= link_to 'Show', user
-      %td= link_to 'Edit', edit_user_path(user)
-      %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
-%br
+      %th Username
+      %th Email
+      %th Name
+      %th Paid?
+      %th Teams Picked
+      %th 2010 Total
+      %th
+      %th
+    -@users.each do |user|
+      %tr
+        %td= user.username
+        %td= user.email
+        %td= user.first + " " + user.last
+        %td= user.payments.first.paid? if !user.payments.empty?      
+        %td= user.picks.select{|p| p.period_id == Period.find_by_year('2011').id}.count.to_s
+        %td= user.prev_win_total
+        %td= link_to 'Show', user
+        %td= link_to 'Edit', edit_user_path(user)
+        %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
+  %br
 
-= link_to 'New User', new_user_path
+  = link_to 'New User', new_user_path
+-else
+  Not supposed to be here.

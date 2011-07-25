@@ -3,16 +3,23 @@ $(function(){
   $("#p1").addClass('_current');
   $("#p1").show();
   initPagination();
-
+  handle_wins_overflow();
   
   $(':checkbox').change(function(){
     if (countChecked($(this))) {
       handle_update_total($(this));
       handle_pick_post($(this));
+      handle_wins_overflow();
       }  
   })
 })
 
+function handle_wins_overflow(){
+  if (parseInt($('#prev_total_wins').text()) > 40) 
+    $('#wins_overflow').show('slow')
+  else
+    $('#wins_overflow').hide('slow')
+}
 function handle_pick_post(el){
   var params =
       {
@@ -26,10 +33,13 @@ function handle_pick_post(el){
 function handle_update_total(el){
   var num = parseInt($(el.closest('.result').children('.wins_field')[0]).text());
   var pre = parseInt($('#prev_total_wins').text());
+   $('#total_teams_picked').effect('highlight', 500);
+   $('#prev_total_wins').effect('highlight', 500); 
   if (el.attr('checked'))
     $('#prev_total_wins').text(pre + num);
   else
     $('#prev_total_wins').text(pre - num);
+  
 }
 
 function countChecked(el) {

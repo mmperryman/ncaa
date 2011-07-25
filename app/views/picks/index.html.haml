@@ -6,6 +6,8 @@
 %br
 .header
   .subheader
+    #wins_overflow{:style => "color:red; display:none;"}
+      %h5 You are currently over the 40 win threshold. If you do not change your teams before the season starts, your pool entry will be invalid.
     .wins_total
       Number of Teams Picked:
       #total_teams_picked= current_user.picks.count.to_s + " Teams Selected"

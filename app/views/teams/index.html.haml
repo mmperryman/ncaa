@@ -9,14 +9,6 @@
     %th 2010 Wins
     %th 2011 Wins    
   - @teams.each do |team|
-    %tr
-      %td= team.name
-      %td= team.short_name
-      %td= team.mascot
-      %td= team.prev_record.wins if team.prev_record
-      %td= team.current_record.wins if team.current_record      
-      %td= link_to 'Show', team
-      %td= link_to 'Edit', edit_team_path(team)
-      %td= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete
+    =render :partial => 'team', :object => team
 
 %p= link_to "New Team", new_team_path
