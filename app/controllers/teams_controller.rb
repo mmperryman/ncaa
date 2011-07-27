@@ -39,4 +39,25 @@ class TeamsController < ApplicationController
     @team.destroy
     redirect_to teams_url, :notice => "Successfully destroyed team."
   end
+  
+  def win
+    @team = Team.find(params[:id])
+    record = @team.records.find_by_period_id(Period.find_by_year('2011'))
+    record.update_attribute(:wins, record.wins + 1)
+    @team = Team.find(params[:id])
+    respond_to do |format|
+      format.js
+    end  
+  end
+  
+  def loss
+    @team = Team.find(params[:id])
+    record = @team.records.find_by_period_id(Period.find_by_year('2011'))
+    record.update_attribute(:wins, record.wins - 1)
+    @team = Team.find(params[:id])
+    respond_to do |format|
+      format.js
+    end  
+  end
+  
 end

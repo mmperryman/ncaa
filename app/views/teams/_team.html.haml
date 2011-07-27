@@ -3,7 +3,11 @@
   %td= team.short_name
   %td= team.mascot
   %td= team.prev_record.wins if team.prev_record
-  %td= team.current_record.wins if team.current_record      
+  %td{:id => "#{team.id}_wins"}= team.current_record.wins if team.current_record      
+  %td
+    %button= link_to "win", win_team_path(team), :remote => true
+  %td
+    %button= link_to "loss", loss_team_path(team), :remote => true  
   %td= link_to 'Show', team
   %td= link_to 'Edit', edit_team_path(team)
   %td= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete

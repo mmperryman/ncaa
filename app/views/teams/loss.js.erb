@@ -1,0 +1,3 @@
+var wins = $("#<%= @team.id %>_wins").html();
+$("#<%= @team.id %>_wins").html(parseInt(wins) - 1);
+$("#<%= @team.id %>_wins").effect('highlight', {color: 'red'}, 500);

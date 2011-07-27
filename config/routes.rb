@@ -8,7 +8,12 @@ Ncaa::Application.routes.draw do
   root :to => "home#index"
   resources :picks, :only => [:index, :create, :update, :destroy]
   resources :standings, :only => :index
-  resources :teams  
+  resources :teams do
+    member do 
+      get 'win'
+      get 'loss'
+    end  
+  end   
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

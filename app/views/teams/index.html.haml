@@ -9,6 +9,7 @@
     %th 2010 Wins
     %th 2011 Wins    
   - @teams.each do |team|
-    =render :partial => 'team', :object => team
+    %div{:id => "team_#{team.id}"}
+      =render :partial => 'team', :object => team
 
 %p= link_to "New Team", new_team_path
