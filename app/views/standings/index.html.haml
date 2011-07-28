@@ -10,49 +10,57 @@
 %table#standings{:style=>"width:100%"}
   %thead
     %tr
-      %th Wins
+      %th 2011 Wins
       %th Username
-      %th Team 1(Wins)
-      %th Team 2(Wins)
-      %th Team 3(Wins)
-      %th Team 4(Wins)
-      %th Team 5(Wins)
+      %th Team 1
+      %th Team 2
+      %th Team 3
+      %th Team 4
+      %th Team 5
+      %th 2010 Wins
   %tbody  
     -if Date.today >= Date.new(2011,6,1)      
-      -@users.sort_by(&:username).each do |user|
+      -@users.each do |user|
         %tr
           -if user.picks.count == 5
             %td= user.current_win_total
             %td= user.username
             -user.teams.each do |team|
-              %td= "#{team.short_name}(#{team.current_record.wins.to_s})"
+              %td= "#{team.name}(#{team.current_record.wins.to_s})"
+            -if user.prev_win_total > 40
+              %td{:style => "color:red;font-weight:bold;"}= user.prev_win_total
+            -else
+              %td= user.prev_win_total  
           -else
             %td 0
             %td= user.username
             %td{:style => "color:red;"} Invalid Entry!
-            %td
-            %td
-            %td
-            %td                                    
+            -4.times do
+              %td    
+            %td 0                                  
     -else
       -@users.each do |user|
         %tr
           %td 0
           %td= user.username
-          %td
+          -5.times do
+            %td
+          %td 0  
   %tfoot
     %tr
-      %th Wins
+      %th 2011 Wins
       %th Username
-      %th Team 1(Wins)
-      %th Team 2(Wins)
-      %th Team 3(Wins)
-      %th Team 4(Wins)
-      %th Team 5(Wins)
+      %th Team 1
+      %th Team 2
+      %th Team 3
+      %th Team 4
+      %th Team 5
+      %th 2010 Wins      
       
 :javascript 
   $(document).ready(function() {
   	oTable = $('#standings').dataTable({
+      "aaSorting": [ [0,'desc'] ],
   		"bJQueryUI": true,
   		"sPaginationType": "two_button",
   		"aoColumns":                                                       
@@ -63,7 +71,8 @@
         { "bSortable": false},
         { "bSortable": false},
         { "bSortable": false},
-        { "bSortable": false}
+        { "bSortable": false},
+        { "bSortable": true}
         ]
   	});
   } );
