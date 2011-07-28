@@ -1,8 +1,21 @@
 $(function(){
   
-  $("#p1").addClass('_current');
-  $("#p1").show();
-  initPagination();
+  // $("#p1").addClass('_current');
+  // $("#p1").show();
+  // initPagination();
+  oTable = $('#picker').dataTable({
+    "aaSorting": [ [0,'desc'] ],
+		"bJQueryUI": true,
+		"sPaginationType": "two_button",
+		"aoColumns":                                                       
+      [                                                                  
+      { "bSortable": true},
+      { "bSortable": true},
+      { "bSortable": false},
+      { "bSortable": false}
+      ]
+	});
+	
   handle_wins_overflow();
   
   $(':checkbox').change(function(){
@@ -43,8 +56,9 @@ function handle_update_total(el){
 }
 
 function countChecked(el) {
-  if ($("input:checked").length > 5) 
+  if ($("input:checked").length > 5) {
     el.attr('checked', false);
+    }
   else {
     el.closest('.result').effect('highlight', 500);
     $("#total_teams_picked").text($("input:checked").length + " Teams Selected.");
@@ -52,24 +66,24 @@ function countChecked(el) {
     }
 }
 
-function initPagination() {
-  $("#page_maker").paginate({
-		count: 5,
-		start: 1,
-		display: 3,
-		border: false,
-		text_color: '#79B5E3',
-		background_color: 'white',	
-		text_hover_color: '#2573AF',
-		background_hover_color: '#F0F0F0', 
-		images: false,
-		mouse: 'press',
-		onChange: function(page){
-		  var current_page = $('._current')[0].id.split('p')[1]
-      if (page == current_page)
-        return false;
-			$('._current','#results').removeClass('_current').hide("slow");
-			$('#p'+page).addClass('_current').show("slow");
-			}
-	});
-}
+// function initPagination() {
+//   $("#page_maker").paginate({
+//    count: 5,
+//    start: 1,
+//    display: 3,
+//    border: false,
+//    text_color: '#79B5E3',
+//    background_color: 'white',  
+//    text_hover_color: '#2573AF',
+//    background_hover_color: '#F0F0F0', 
+//    images: false,
+//    mouse: 'press',
+//    onChange: function(page){
+//      var current_page = $('._current')[0].id.split('p')[1]
+//       if (page == current_page)
+//         return false;
+//      $('._current','#results').removeClass('_current').hide("slow");
+//      $('#p'+page).addClass('_current').show("slow");
+//      }
+//  });
+// }

@@ -1,19 +1,19 @@
 -#picks form
+%table#picker{:style=>"width:100%"}
+  %thead
+    %tr
+      %th 
+      %th Name
+      %th Mascot
+      %th 2010 Wins
+  %tbody
+    -Team.all.each do |team|
+      %tr.result
+        %td
+          %input{:type =>'checkbox', :id => "team_#{team.id}", :checked => current_user.picks.map(&:team_id).include?(team.id) ? true : false}
+        %td.name_field= team.name  
+        %td.mascot_field= team.mascot
+        %td.wins_field= team.prev_record.wins            
+  %tfoot
 
-#teams
-  #teams_header
-    %span 
-    %span Team Name
-    %span Mascot
-    %span 2010 Wins
-    #results
-      -Team.all.sort_by(&:name).dissect(25).each_with_index do |page_of_teams, index|
-        %div{:id => "p#{(index+1).to_s}", :style => "display:none;"}
-          -page_of_teams.each do |team|
-            .result
-              %span
-                %input{:type =>'checkbox', :id => "team_#{team.id}", :checked => current_user.picks.map(&:team_id).include?(team.id) ? true : false}
-              %span.name_field= team.name
-              %span.mascot_field= team.mascot
-              %span.wins_field= team.prev_record.wins
-#page_maker
+

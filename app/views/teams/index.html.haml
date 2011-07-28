@@ -1,15 +1,23 @@
 %button=link_to "Home", root_path
 %button=link_to "My Picks List", :picks
 %button=link_to "Standings", :standings
-%table
-  %tr
-    %th Name
-    %th Short name
-    %th Mascot
-    %th 2010 Wins
-    %th 2011 Wins    
-  - @teams.each do |team|
-    %div{:id => "team_#{team.id}"}
+%table#team_list
+  %thead
+    %tr
+      %th Name
+      %th Short name
+      %th Mascot
+      %th 2010 Wins
+      %th 2011 Wins
+      -5.times do
+        %th
+  %tbody    
+    - @teams.each do |team|
       =render :partial => 'team', :object => team
+  %tfoot    
 
 %p= link_to "New Team", new_team_path
+:javascript
+  $(function(){
+    $('#team_list').dataTable()
+  })  
