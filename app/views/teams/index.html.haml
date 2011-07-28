@@ -1,7 +1,7 @@
 %button=link_to "Home", root_path
 %button=link_to "My Picks List", :picks
 %button=link_to "Standings", :standings
-%table#team_list
+%table#team_list{:style=>"width:100%;"}
   %thead
     %tr
       %th Name
@@ -19,5 +19,21 @@
 %p= link_to "New Team", new_team_path
 :javascript
   $(function(){
-    $('#team_list').dataTable()
+    oTable = $('#team_list').dataTable({
+  		"bJQueryUI": true,
+  		"sPaginationType": "two_button",
+  		"aoColumns":                                                       
+        [                                                                  
+        { "bSortable": true},
+        { "bSortable": true},
+        { "bSortable": false},
+        { "bSortable": false},
+        { "bSortable": false},
+        { "bSortable": false},
+        { "bSortable": false},
+        { "bSortable": false},                        
+        { "bSortable": false},                
+        { "bSortable": false}
+        ]
+  	});
   })  
