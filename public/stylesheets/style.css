@@ -65,6 +65,14 @@ div.wrapper {
   width: 870px;
   margin: 0px 40px;
 }
+
+/* Content */
+.odd {
+  background-color: #EEEEFF;
+}
+.even {
+  background-color: #FFE600;  
+}
 /* Sunken Well */
 
 .sunken_well {

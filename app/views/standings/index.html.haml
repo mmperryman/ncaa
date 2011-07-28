@@ -16,18 +16,17 @@
       %th Team 2(Wins)
       %th Team 3(Wins)
       %th Team 4(Wins)
-      %th Team 5(Wins)                
+      %th Team 5(Wins)
   %tbody  
     -if Date.today >= Date.new(2011,6,1)      
-      -@users.each do |user|
-        -if user.picks.count == 5
-          %tr
+      -@users.sort_by(&:username).each do |user|
+        %tr
+          -if user.picks.count == 5
             %td= user.current_win_total
             %td= user.username
             -user.teams.each do |team|
               %td= "#{team.short_name}(#{team.current_record.wins.to_s})"
-        -else
-          %tr
+          -else
             %td 0
             %td= user.username
             %td{:style => "color:red;"} Invalid Entry!
@@ -42,11 +41,20 @@
           %td= user.username
           %td
   %tfoot
+    %tr
+      %th Wins
+      %th Username
+      %th Team 1(Wins)
+      %th Team 2(Wins)
+      %th Team 3(Wins)
+      %th Team 4(Wins)
+      %th Team 5(Wins)
+      
 :javascript 
   $(document).ready(function() {
   	oTable = $('#standings').dataTable({
   		"bJQueryUI": true,
-  		"sPaginationType": "full_numbers",
+  		"sPaginationType": "two_button",
   		"aoColumns":                                                       
         [                                                                  
         { "bSortable": true},
