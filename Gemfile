@@ -13,6 +13,7 @@ gem 'nifty-generators'
 gem 'mocha'
 gem 'jquery-rails'
 gem 'paperclip'
+gem 'bullet'
 
 # Use unicorn as the web server
 # gem 'unicorn'

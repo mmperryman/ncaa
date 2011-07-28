@@ -34,6 +34,8 @@ GEM
       activerecord (>= 3.0.7)
       activerecord (>= 3.0.7)
     builder (2.1.2)
+    bullet (2.0.1)
+      uniform_notifier (~> 1.0.0)
     cocaine (0.1.0)
     columnize (0.3.4)
     erubis (2.6.6)
@@ -96,12 +98,14 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.29)
+    uniform_notifier (1.0.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   authlogic
+  bullet
   haml
   jquery-rails
   mocha

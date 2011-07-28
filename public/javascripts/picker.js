@@ -16,9 +16,9 @@ $(function(){
 
 function handle_wins_overflow(){
   if (parseInt($('#prev_total_wins').text()) > 40) 
-    $('#wins_overflow').show('slow')
+    $('#wins_overflow').slideDown('fast')
   else
-    $('#wins_overflow').hide('slow')
+    $('#wins_overflow').hide('fast')
 }
 function handle_pick_post(el){
   var params =
