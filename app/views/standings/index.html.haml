@@ -4,21 +4,58 @@
   -if current_user.admin?
     %button=link_to "Team List", :teams
     %button=link_to "Users", :users
-%h1 Overall Standings
-%table
-  %tr
-    %th TotalW
-    %th Username
-    %th T1(Wins)
-    %th T2(Wins)
-    %th T3(Wins)
-    %th T4(Wins)
-    %th T5(Wins)                
-  -@users.each do |user|
+%h1 
+  Overall Standings
+%h5= "Team picks will be revealed on #{Date.new(2011,9,1).strftime('%A %B %d, %Y')}" if Date.today < Date.new(2011,9,1)
+%table#standings{:style=>"width:100%"}
+  %thead
     %tr
-      %td 0
-      %td= user.username
-      -user.teams.each do |team|
-        %td= "#{team.short_name}(#{team.current_record.wins.to_s})"
-  
-  
+      %th Wins
+      %th Username
+      %th Team 1(Wins)
+      %th Team 2(Wins)
+      %th Team 3(Wins)
+      %th Team 4(Wins)
+      %th Team 5(Wins)                
+  %tbody  
+    -if Date.today >= Date.new(2011,6,1)      
+      -@users.each do |user|
+        -if user.picks.count == 5
+          %tr
+            %td= user.current_win_total
+            %td= user.username
+            -user.teams.each do |team|
+              %td= "#{team.short_name}(#{team.current_record.wins.to_s})"
+        -else
+          %tr
+            %td 0
+            %td= user.username
+            %td{:style => "color:red;"} Invalid Entry!
+            %td
+            %td
+            %td
+            %td                                    
+    -else
+      -@users.each do |user|
+        %tr
+          %td 0
+          %td= user.username
+          %td
+  %tfoot
+:javascript 
+  $(document).ready(function() {
+  	oTable = $('#standings').dataTable({
+  		"bJQueryUI": true,
+  		"sPaginationType": "full_numbers",
+  		"aoColumns":                                                       
+        [                                                                  
+        { "bSortable": true},
+        { "bSortable": true},
+        { "bSortable": false},
+        { "bSortable": false},
+        { "bSortable": false},
+        { "bSortable": false},
+        { "bSortable": false}
+        ]
+  	});
+  } );
