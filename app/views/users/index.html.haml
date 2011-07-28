@@ -9,20 +9,20 @@
   #notice= notice
   %table
     %tr
+      %th
       %th Username
       %th Email
       %th Name
-      %th Paid?
       %th Teams Picked
       %th 2010 Total
       %th
       %th
     -@users.each do |user|
       %tr
-        %td= user.username
+        %td=image_tag user.payments.first.paid? ? 'moneybag_24.png' : 'red_x.png'
+        %td=user.username
         %td= user.email
         %td= user.first + " " + user.last
-        %td= user.payments.first.paid? if !user.payments.empty?      
         %td= user.picks.select{|p| p.period_id == Period.find_by_year('2011').id}.count.to_s
         %td= user.prev_win_total
         %td= link_to 'Show', user
