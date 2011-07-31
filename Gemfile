@@ -6,7 +6,8 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'mysql2', ">= 0.2.0", "< 0.3.0"
+# gem 'mysql2', ">= 0.2.0", "< 0.3.0"
+gem 'sqlite3'
 gem 'haml'
 gem 'authlogic'
 gem 'nifty-generators'
@@ -35,5 +36,5 @@ gem 'bullet'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development do
-  gem 'ruby-debug19', :require => 'ruby-debug'
+#  gem 'ruby-debug19', :require => 'ruby-debug'
 end
