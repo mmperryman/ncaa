@@ -17,6 +17,7 @@ a:hover {
 .wins_total {
   text-decoration: bold;
   position: auto;
+  margin-top: 5px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
