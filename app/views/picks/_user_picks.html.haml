@@ -1,7 +1,7 @@
 #foo
   .wins_total
-    Your Current Picks Total 2010 Wins:
-    %span#prev_total_wins{:style=>'font-weight:bold'}= current_user.prev_win_total
+    Current Picks Total 2010 Wins:
+    %span#prev_total_wins= current_user.prev_win_total.to_s
 
   .array
     .pick_array
@@ -14,3 +14,6 @@
             .pick=link_to (image_tag pick.team.logo_url, :size => '100x100'), pick.team.espn_url, :target=>"_blank"
         -(5 - @picks.count).times do
           .pick=image_tag 'question-mark.jpg', :size => '100x100'
+  .wins_total
+    Current Picks Total 2011 Wins:
+    %span#current_total_wins= current_user.current_win_total.to_s

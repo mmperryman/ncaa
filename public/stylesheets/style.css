@@ -1,7 +1,7 @@
 
 body {
   margin:auto;
-/*  background: #F6F6F6 url('/images/goodnogood_crop3.jpg') top center no-repeat;*/
+  background: #F6F6F6 url('/images/goodnogood_crop3.jpg') top center no-repeat;
   background-size: 100%;
 }
 
@@ -10,6 +10,25 @@ div.wrapper {
   margin: 0 auto;
 }
 
+a:hover {
+  background: none;	
+}
+
+.wins_total {
+  text-decoration: bold;
+  position: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+#prev_total_wins {
+  color: green;
+  font-size: 24pt;
+}
+#current_total_wins {
+  color: green;
+  font-size: 24pt;
+}
 /* Header */
 
 #login_wrapper {
