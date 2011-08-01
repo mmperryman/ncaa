@@ -26,10 +26,9 @@
   %span . Are you ready?
 
 =render 'warning'
-=render 'todo'
+-if current_user and current_user.admin?
+  .foo{:style => "border:1px solid blue;"}
+    =render 'todo' 
 =render 'rules'
 =render 'money'
 =render 'faq'
-
-:javascript
-  $( "input:submit, a, button", ".demo" ).button();
