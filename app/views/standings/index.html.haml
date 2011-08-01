@@ -8,7 +8,7 @@
 %br      
 %h1 
   Overall Standings
-%h5= "Team picks will be revealed on #{Date.new(2011,9,1).strftime('%A %B %d, %Y')}" if Date.today < Date.new(2011,9,1)
+%h3{:style=>"color:green"}= "Team picks will be revealed on #{Date.new(2011,9,1).strftime('%A %B %d, %Y')}" if Date.today < Date.new(2011,9,1)
 %table#standings{:style=>"width:100%"}
   %thead
     %tr
@@ -21,7 +21,7 @@
       %th Team 5
       %th 2010 Wins
   %tbody  
-    -if Date.today >= Date.new(2011,6,1)      
+    -if Date.today >= Date.new(2011,9,1)      
       -@users.each do |user|
         %tr
           -if user.picks.count == 5
