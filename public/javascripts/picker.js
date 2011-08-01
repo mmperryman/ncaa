@@ -9,10 +9,10 @@ $(function(){
 		"sPaginationType": "two_button",
 		"aoColumns":                                                       
       [                                                                  
-      { "bSortable": true},
+      { "bSortable": false},
       { "bSortable": true},
       { "bSortable": false},
-      { "bSortable": false}
+      { "bSortable": true}
       ]
 	});
 	
@@ -23,16 +23,22 @@ $(function(){
       handle_update_total($(this));
       handle_pick_post($(this));
       handle_wins_overflow();
+	  handle_update_user_picks();
       }  
   })
 })
 
+function handle_update_user_picks(){
+  var url = '/picks/update_picks';
+  $.get(url, function(data) {})
+}
 function handle_wins_overflow(){
   if (parseInt($('#prev_total_wins').text()) > 40) 
     $('#wins_overflow').slideDown('fast')
   else
     $('#wins_overflow').hide('fast')
 }
+
 function handle_pick_post(el){
   var params =
       {
@@ -66,24 +72,3 @@ function countChecked(el) {
     }
 }
 
-// function initPagination() {
-//   $("#page_maker").paginate({
-//    count: 5,
-//    start: 1,
-//    display: 3,
-//    border: false,
-//    text_color: '#79B5E3',
-//    background_color: 'white',  
-//    text_hover_color: '#2573AF',
-//    background_hover_color: '#F0F0F0', 
-//    images: false,
-//    mouse: 'press',
-//    onChange: function(page){
-//      var current_page = $('._current')[0].id.split('p')[1]
-//       if (page == current_page)
-//         return false;
-//      $('._current','#results').removeClass('_current').hide("slow");
-//      $('#p'+page).addClass('_current').show("slow");
-//      }
-//  });
-// }

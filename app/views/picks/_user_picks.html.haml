@@ -1,0 +1,16 @@
+#foo
+  .wins_total
+    Your Current Picks Total 2010 Wins:
+    %span#prev_total_wins{:style=>'font-weight:bold'}= current_user.prev_win_total
+
+  .array
+    .pick_array
+      -if @picks.empty?
+        -5.times do
+          .pick=image_tag 'question-mark.jpg', :size => '100x100'
+      -else
+        -@picks.each do |pick|
+          -if pick.team.logo_url
+            .pick=link_to (image_tag pick.team.logo_url, :size => '100x100'), pick.team.espn_url, :target=>"_blank"
+        -(5 - @picks.count).times do
+          .pick=image_tag 'question-mark.jpg', :size => '100x100'

@@ -73,6 +73,25 @@ div.wrapper {
 .even {
   background-color: #FFFACD;  
 }
+
+.pick_array{
+  margin-left: auto;
+  margin-right: auto;
+  width:550px;
+  overflow:hidden;
+}
+.pick{
+  border: 3px dotted blue;
+  float:left;
+}
+
+.left_score {
+  float:left;
+}
+
+.right_score {
+  float:right;
+}
 /* Sunken Well */
 
 .sunken_well {

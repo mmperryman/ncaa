@@ -8,20 +8,7 @@
   .subheader
     #wins_overflow{:style => "color:red; display:none;"}
       %h5 You are currently over the 40 win threshold. If you do not change your teams before the season starts, your pool entry will be invalid.
-    .wins_total
-      Number of Teams Picked:
-      #total_teams_picked= current_user.picks.count.to_s + " Teams Selected"
-      Your Current Picks Total 2010 Wins:
-      %span#prev_total_wins{:style=>'font-weight:bold'}= current_user.prev_win_total
-      %div 
-      Your Current Picks Total 2011 Wins:
-      %span#current_total_wins{:style=>'font-weight:bold'}= current_user.current_win_total
-  - if @picks.empty?
-    #picks
-      .no_picks You have NO picks yet!
-  - else
-    -@picks.each do |pick|
-      =render :partial => 'pick', :object => pick
-="*"*50
+#update_area
+  =render 'user_picks'
 =render 'form'
 

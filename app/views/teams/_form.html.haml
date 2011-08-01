@@ -1,5 +1,5 @@
 -#team form
-= form_for @team do |team_form|
+= form_for @team, :html => { :multipart => true } do |team_form|
   %p
     = team_form.label :name
     %br
@@ -13,7 +13,15 @@
     %br
     = team_form.text_field :mascot
   %p
-    -team_form.fields_for :records, @team.prev_record do |record_form|
+    = team_form.label :logo_url
+    %br
+    = team_form.text_field :logo_url
+  %p
+  = team_form.label :espn_url
+  %br
+  = team_form.text_field :espn_url  
+  %p
+    =team_form.fields_for :records, @team.prev_record do |record_form|
       =record_form.label :wins, "Previous Wins"
       %br
       =record_form.text_field :wins
