@@ -1,10 +1,11 @@
-- if current_user
-  %button=link_to "My Picks", :picks
-%button=link_to "Standings", :standings
-- if current_user && current_user.admin?
-  %button=link_to "Users", :users
-  %button=link_to "Team List", :teams
-  
+.buttons
+  - if current_user
+    =link_to "My Picks", :picks, :class => 'regular'
+  =link_to "Standings", :standings, :class => 'negative'
+  - if current_user && current_user.admin?
+    =link_to "Users", :users, :class => 'positive'
+    =link_to "Team List", :teams
+%br  
 - if !current_user
   #login_notice You must login in order to select teams.  
 :javascript
@@ -25,7 +26,10 @@
   %span . Are you ready?
 
 =render 'warning'
--#=render 'todo'
+=render 'todo'
 =render 'rules'
 =render 'money'
 =render 'faq'
+
+:javascript
+  $( "input:submit, a, button", ".demo" ).button();

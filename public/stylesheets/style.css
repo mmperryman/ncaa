@@ -1,7 +1,7 @@
 
 body {
   margin:auto;
-  background: #F6F6F6 url('/images/goodnogood_crop3.jpg') top center no-repeat;
+/*  background: #F6F6F6 url('/images/goodnogood_crop3.jpg') top center no-repeat;*/
   background-size: 100%;
 }
 
@@ -64,7 +64,7 @@ a:hover {
   height: 12px;
   margin-bottom: 24px;
 }
-
+  
 /* Pages */
 .notice_header {
   width: 875px;

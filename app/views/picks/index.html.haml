@@ -1,8 +1,8 @@
 =javascript_include_tag 'picker'
-
-%button=link_to "Home", root_path
-%button=link_to "Team List", :teams
-%button=link_to "Standings", :standings
+.buttons
+  =link_to "Home", root_path, :class => 'regular'
+  =link_to "Team List", :teams, :class => 'negative'
+  =link_to "Standings", :standings, :class => 'positive'
 %br
 .header
   .subheader

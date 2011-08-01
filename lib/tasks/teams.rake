@@ -4,6 +4,10 @@ namespace :import do
 
   desc "Import Teams into DB from a CSV File."
   task :teams => :environment do
+    puts "Clearing Old Periods..."
+    Period.destroy_all
+    Period.create(:year => '2010')
+    Period.create(:year => '2011')    
     puts "Clearing Old Teams..."
     Team.destroy_all
     Pick.destroy_all
@@ -22,5 +26,7 @@ namespace :import do
         puts "Unable to import team."
       end  
     end
+    puts "Creating Initial User (ME)..."
+    User.create(:username => 'Pman', :email => 'mattp88@ufl.edu', :password => '1234', :password_confirmation => '1234', :first => 'Matt', :last => 'Perryman')
   end
 end

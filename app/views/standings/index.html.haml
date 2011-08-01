@@ -1,9 +1,11 @@
-%button=link_to "Home", root_path
-- if current_user
-  %button=link_to "My Picks List", :picks
-  -if current_user.admin?
-    %button=link_to "Team List", :teams
-    %button=link_to "Users", :users
+.buttons
+  =link_to "Home", root_path, :class => 'standard'
+  - if current_user
+    =link_to "My Picks List", :picks, :class => 'negative'
+    -if current_user.admin?
+      =link_to "Team List", :teams, :class => 'positive'
+      =link_to "Users", :users
+%br      
 %h1 
   Overall Standings
 %h5= "Team picks will be revealed on #{Date.new(2011,9,1).strftime('%A %B %d, %Y')}" if Date.today < Date.new(2011,9,1)

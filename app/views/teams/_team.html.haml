@@ -5,9 +5,9 @@
   %td= team.prev_record.wins if team.prev_record
   %td{:id => "#{team.id}_wins"}= team.current_record.wins if team.current_record      
   %td
-    %button= link_to "win", win_team_path(team), :remote => true
+    .buttons= link_to "win", win_team_path(team), :remote => true, :class=>'positive'
   %td
-    %button= link_to "loss", loss_team_path(team), :remote => true  
+    .buttons= link_to "loss", loss_team_path(team), :remote => true, :class=>'negative'
   %td= link_to 'Show', team
   %td= link_to 'Edit', edit_team_path(team)
   %td= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete

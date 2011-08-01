@@ -1,6 +1,9 @@
-%button=link_to "Home", root_path
-%button=link_to "My Picks List", :picks
-%button=link_to "Standings", :standings
+.buttons
+  =link_to "Home", root_path, :class => 'standard'
+  =link_to "My Picks List", :picks, :class => 'negative'
+  =link_to "Standings", :standings, :class => 'positive'
+%br  
+%br
 %table#team_list{:style=>"width:100%;"}
   %thead
     %tr
@@ -26,9 +29,9 @@
         [                                                                  
         { "bSortable": true},
         { "bSortable": true},
-        { "bSortable": false},
-        { "bSortable": false},
-        { "bSortable": false},
+        { "bSortable": true},
+        { "bSortable": true},
+        { "bSortable": true},
         { "bSortable": false},
         { "bSortable": false},
         { "bSortable": false},                        
