@@ -15,7 +15,10 @@ class PicksController < ApplicationController
     else  
       @pick = Pick.create(:user_id => current_user.id, :period_id => current_period.id, :team_id => params[:team_id])
     end  
-    render :text => ""
+    @picks = current_user.picks
+    respond_to do |format|
+      format.js
+    end
   end
   
   def update_picks
