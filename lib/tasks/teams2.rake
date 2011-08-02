@@ -4,10 +4,6 @@ namespace :import do
 
   desc "Import Teams into DB from a CSV File."
   task :teams => :environment do
-    puts "Clearing Old Periods..."
-    Period.destroy_all
-    Period.create(:year => '2010')
-    Period.create(:year => '2011')    
     puts "Clearing Old Teams..."
     Team.destroy_all
     Pick.destroy_all
@@ -25,17 +21,12 @@ namespace :import do
                                :short_name => short_name, 
                                :mascot => mascot, 
                                :espn_url => espn_url, 
-                               :logo_url => logo_url)        
+                               :logo_url => logo_url)
         new_team.records.create(:period_id => Period.find_or_create_by_year('2010').id, :wins => wins)
         new_team.records.create(:period_id => Period.find_or_create_by_year('2011').id, :wins => 0)        
       rescue 
         puts "Unable to import team."
       end  
     end
-    puts "Creating Initial User (ME)..."
-    User.destroy_all
-    u = User.new(:username => 'Pman', :email => 'mattp88@ufl.edu', :password => '1234', :password_confirmation => '1234', :first => 'Matt', :last => 'Perryman')
-    u.save!
-    u.payments.create(:period_id => Period.find_by_year('2011').id, :paid => true)
   end
 end
