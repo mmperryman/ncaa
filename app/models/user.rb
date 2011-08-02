@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   has_many :payments, :dependent => :destroy
   accepts_nested_attributes_for :payments
   
+  validates_uniqueness_of :username
+  validates_uniqueness_of :email  
+  
   def current_win_total
     total = 0
     picks.find_all_by_period_id(Period.find_by_year('2011')).each do |pick|

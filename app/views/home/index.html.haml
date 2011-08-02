@@ -10,22 +10,12 @@
 %br
 - if !current_user
   #login_notice You must login in order to select teams.  
-:javascript
-  today  = new Date();
-  todayEpoch  = today.getTime();
 
-  target = new Date("1 September, 2011"); 
-  targetEpoch = target.getTime();
-
-  daysLeft = Math.floor(((targetEpoch - todayEpoch) / (60*60*24)) / 1000);
-  hoursLeft = (daysLeft % 24)
-
-%h6
+%h2{:style=>"text-align:center;"}
   %span
-    Season starts in 
-    :javascript
-      document.write(daysLeft + " Days, " + hoursLeft + " Hours");
-  %span . Are you ready?
+    The 2011 season starts in 
+    =distance_of_time_in_words(Time.now, Date.new(2011,9,1)) + ".  "
+    Are you ready?
 
 =render 'warning'
 -if current_user and current_user.admin?

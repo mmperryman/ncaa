@@ -21,9 +21,9 @@
       %th Team 5
       %th 2010 Wins
   %tbody  
-    -if Date.today >= Date.new(2011,9,1)      
+    -if Date.today >= Date.new(2011,9,1)
       -@users.each do |user|
-        %tr
+        %tr{:class => "#{current_user == user ? 'current_login' : ''}"}
           -if user.picks.count == 5
             %td= user.current_win_total
             %td= user.username
@@ -42,7 +42,7 @@
             %td 0                                  
     -else
       -@users.each do |user|
-        %tr
+        %tr{:class => "#{current_user == user ? 'current_login' : ''}"}
           %td 0
           %td= user.username
           -5.times do

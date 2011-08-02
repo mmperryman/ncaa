@@ -10,8 +10,12 @@ div.wrapper {
   margin: 0 auto;
 }
 
+.current_login{
+  font-weight:bold;
+}
+
 a:hover {
-  background: none;	
+  background: #CCC;	
 }
 .win_info {
   display:none;
