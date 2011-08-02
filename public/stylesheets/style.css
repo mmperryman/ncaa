@@ -1,7 +1,7 @@
 
 body {
   margin:auto;
-/*  background: #F6F6F6 url('/images/goodnogood_crop3.jpg') top center no-repeat;*/
+  background: #F6F6F6 url('/images/goodnogood_crop3.jpg') top center repeat-y;
   background-size: 100%;
 }
 
@@ -39,10 +39,12 @@ a:hover {
   font-size: 24pt;
 }
 /* Header */
-
 #login_wrapper {
+  border: 1px solid red;
+  height: 104px;
+  background: transparent url('/images/goalpost2.png') top center;
+  position: relative;
 }
-
 #nav_wrapper {
 }
 
@@ -56,6 +58,7 @@ a:hover {
   color: white;
 }
 /* Content */
+
 #content_body {
   background: transparent url('/images/content_bg.png') top center repeat-y;
   position: relative;
