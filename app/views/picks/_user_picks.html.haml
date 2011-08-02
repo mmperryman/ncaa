@@ -11,7 +11,12 @@
       -else
         -@picks.each do |pick|
           -if pick.team.logo_url
-            .pick=link_to (image_tag pick.team.logo_url, :size => '100x100'), pick.team.espn_url, :target=>"_blank"
+            .pick.team_pick
+              =link_to (image_tag pick.team.logo_url, :size => '100x100', :alt => "#{pick.team.name}"), pick.team.espn_url, :target=>"_blank"
+              .win_info
+                ="#{pick.team.name[0..10]}"
+                %br
+                ="#{pick.team.records.first.wins} Wins"
         -(5 - @picks.count).times do
           .pick=image_tag 'question-mark.jpg', :size => '100x100'
   .wins_total
