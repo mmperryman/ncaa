@@ -1,8 +1,16 @@
 
 body {
-  margin:auto;
-  background: #F6F6F6 url('/images/goodnogood_crop3.jpg') top center repeat-y;
-  background-size: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+img#bg {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
 }
 
 div.wrapper {
@@ -40,7 +48,6 @@ a:hover {
 }
 /* Header */
 #login_wrapper {
-  border: 1px solid red;
   height: 104px;
   background: transparent url('/images/goalpost2.png') top center;
   position: relative;
