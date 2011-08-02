@@ -20,12 +20,12 @@ class PicksController < ApplicationController
       format.js
     end
   end
-  
-  def update_picks
-    @picks = current_user.picks
-    respond_to do |format|
-      format.js
-    end
-  end
+  # 
+  # def update_picks
+  #   @picks = current_user.picks
+  #   respond_to do |format|
+  #     format.js
+  #   end
+  # end
 
 end

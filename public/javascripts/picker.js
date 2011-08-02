@@ -1,8 +1,17 @@
 $(function(){
+  init_data_table();	
+  handle_wins_overflow();
   
-  // $("#p1").addClass('_current');
-  // $("#p1").show();
-  // initPagination();
+  $(':checkbox').live('change', function(){
+    if (countChecked($(this))) {
+      handle_update_total($(this));
+      handle_pick_post($(this));
+      handle_wins_overflow();
+      }  
+  })
+})
+
+function init_data_table() {
   oTable = $('#picker').dataTable({
     "aaSorting": [ [0,'desc'] ],
 		"bJQueryUI": true,
@@ -15,22 +24,7 @@ $(function(){
       { "bSortable": true}
       ]
 	});
-	
-  handle_wins_overflow();
-  
-  $(':checkbox').change(function(){
-    if (countChecked($(this))) {
-      handle_update_total($(this));
-      handle_pick_post($(this));
-      handle_wins_overflow();
-	  handle_update_user_picks();
-      }  
-  })
-})
 
-function handle_update_user_picks(){
-  var url = '/picks/update_picks';
-  $.get(url, function(data) {})
 }
 function handle_wins_overflow(){
   if (parseInt($('#prev_total_wins').text()) > 40) 
