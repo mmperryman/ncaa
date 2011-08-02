@@ -1,13 +1,13 @@
 $(function(){
   init_data_table();	
   handle_wins_overflow();
-  
   $('.team_pick').live('mouseover', function() {
 	$(this).children('.win_info').show();
   })
   $('.team_pick').live('mouseout', function() {
 	$(this).children('.win_info').hide();
   })
+
   $(':checkbox').live('change', function(){
     if (countChecked($(this))) {
       handle_update_total($(this));
@@ -24,7 +24,7 @@ function init_data_table() {
 		"sPaginationType": "two_button",
 		"aoColumns":                                                       
       [                                                                  
-      { "bSortable": false},
+      { "bSortable": false,},
       { "bSortable": true},
       { "bSortable": false},
       { "bSortable": true}
@@ -62,7 +62,8 @@ function handle_update_total(el){
 }
 
 function countChecked(el) {
-  if ($("input:checked").length > 5) {
+  var pick_count = $(oTable.fnGetNodes()).find("input[type='checkbox']:checked").length;
+  if (pick_count > 5) {
     el.attr('checked', false);
     }
   else {
