@@ -48,8 +48,8 @@ a:hover {
 }
 /* Header */
 #login_wrapper {
-  height: 104px;
-  background: transparent url('/images/goalpost2.png') top center;
+  height: 114px;
+  background: transparent url('/images/logo1.png') top center no-repeat;
   position: relative;
 }
 #nav_wrapper {
