@@ -106,10 +106,14 @@ a:hover {
 
 /* Content */
 .odd {
-  background-color: #EEEEFF;
+  /* blue */
+  /*  background-color: #EEEEFF;*/
+  background-color: #4D4DFF;
 }
 .even {
-  background-color: #FFFACD;  
+/*	orange*/
+/*  background-color: #FFFACD;  */
+  background-color: #FBEC5D;  
 }
 
 .pick_array{
