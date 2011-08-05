@@ -12,7 +12,7 @@
   %table
     %tr
       %th
-      %th Username
+      %th Team Name
       %th Email
       %th Name
       %th Teams Picked
@@ -22,7 +22,7 @@
     -@users.each do |user|
       %tr
         %td=image_tag user.payments.first.paid? ? 'moneybag_24.png' : 'red_x.png'
-        %td=user.username
+        %td=user.team_name
         %td= user.email
         %td= user.first + " " + user.last
         %td= user.picks.select{|p| p.period_id == Period.find_by_year('2011').id}.count.to_s

@@ -14,7 +14,7 @@
   %thead
     %tr
       %th 2011 Wins
-      %th Username
+      %th Team Name
       %th Team 1
       %th Team 2
       %th Team 3
@@ -27,7 +27,7 @@
         %tr{:class => "#{current_user == user ? 'current_login' : ''}"}
           -if user.picks.count == 5
             %td= user.current_win_total
-            %td= user.username
+            %td= user.team_name
             -user.teams.each do |team|
               %td= "#{team.name}(#{team.current_record.wins.to_s})"
             -if user.prev_win_total > 40
@@ -36,7 +36,7 @@
               %td= user.prev_win_total  
           -else
             %td 0
-            %td= user.username
+            %td= user.team_name
             %td{:style => "color:red;"} Invalid Entry!
             -4.times do
               %td    
@@ -45,14 +45,14 @@
       -@users.each do |user|
         %tr{:class => "#{current_user == user ? 'current_login' : ''}"}
           %td 0
-          %td= user.username
+          %td= user.team_name
           -5.times do
             %td
           %td  
   %tfoot
     %tr
       %th 2011 Wins
-      %th Username
+      %th Team Name
       %th Team 1
       %th Team 2
       %th Team 3

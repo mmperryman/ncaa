@@ -34,7 +34,7 @@ namespace :import do
     end
     puts "Creating Initial User (ME)..."
     User.destroy_all
-    u = User.new(:username => 'Pman', :email => 'mattp88@ufl.edu', :password => '1234', :password_confirmation => '1234', :first => 'Matt', :last => 'Perryman')
+    u = User.new(:team_name => "Perryman's Moosemen", :email => 'mmperryman@gmail.com', :password => '1234', :password_confirmation => '1234', :first => 'Matt', :last => 'Perryman')
     u.save!
     u.payments.create(:period_id => Period.find_by_year('2011').id, :paid => true)
   end
