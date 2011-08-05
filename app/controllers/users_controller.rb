@@ -60,6 +60,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     respond_to do |format|
+      debugger
       if @user.update_attributes(params[:user])
         if @user == current_user
           format.html { redirect_to(root_path, :notice => 'User Profile was successfully updated.') }
