@@ -21,6 +21,20 @@
 -if current_user and current_user.admin?
   .foo{:style => "border:1px solid blue;"}
     =render 'todo' 
-=render 'rules'
-=render 'money'
-=render 'faq'
+#accordion
+  %h3 
+    %a.ac_head Rules    
+  =render 'rules'
+  %h3 
+    %a.ac_head $$$  
+  =render 'money'
+  %h3 
+    %a.ac_head FAQ  
+  =render 'faq'
+    
+:javascript 
+  $(function() {
+    $('#accordion').accordion({
+     autoheight: false
+    });
+  });
