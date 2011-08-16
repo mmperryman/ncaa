@@ -36,3 +36,8 @@ class User < ActiveRecord::Base
      find_by_login(login) || find_by_email(login)
   end
 end
+
+def send_forgot_password!
+  reset_perishable_token!
+  UserMailer.forgot_password(self).deliver
+end  

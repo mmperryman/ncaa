@@ -86,4 +86,20 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def reset_password
+    @user = User.find_using_perishable_token(params[:reset_password_code], 1.week) || (raise Exception)
+  end
+
+  def reset_password_submit
+    @user = User.find_using_perishable_token(params[:reset_password_code], 1.week) || (raise Exception)
+    @user.active = true
+    if @user.update_attributes(params[:user].merge({:active => true}))
+      flash[:notice] = "Successfully reset password."
+      redirect_to @user
+    else
+      flash[:notice] = "There was a problem resetting your password."
+      render :action => :reset_password
+    end
+  end
 end
