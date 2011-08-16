@@ -11,7 +11,7 @@ class UserMailer < ActionMailer::Base
   def forgot_password(user)
     from          "Binary Logic Notifier <noreply@binarylogic.com>"
 
-    @reset_password_link = reset_password_url(user.perishable_token)
+    @reset_password_link = reset_password_url(user.persistence_token)
 
     mail(:to => user.email,
          :subject => "Password Reset",
