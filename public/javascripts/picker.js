@@ -8,7 +8,7 @@ $(function(){
 	$(this).children('.win_info').hide();
   })
 
-  $(':checkbox').live('change', function(){
+  $(':checkbox').live('change blur', function(){
     if (countChecked($(this))) {
       handle_update_total($(this));
       handle_pick_post($(this));
