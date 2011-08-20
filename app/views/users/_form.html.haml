@@ -24,6 +24,9 @@
   .field
     =f.label :password_confirmation
     =f.password_field :password_confirmation
+  .field
+    =f.label :background
+    =f.select :background, options_for_select(User::BACKGROUNDS, :selected => f.object.background)
   -if current_user && current_user.admin?
     .field
       =f.fields_for :payments, @user.payments.first do |payment_form|

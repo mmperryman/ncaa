@@ -10,7 +10,14 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :payments
   
   validates_uniqueness_of :team_name
-  validates_uniqueness_of :email  
+  validates_uniqueness_of :email
+  
+  BACKGROUNDS = [['Blue Sky','bluesky.jpg'], 
+                 ['Gator Mix-Up','gator_mixup.jpg'],
+                 ['UCF Knights', 'knights.jpg'],
+                 ['Boise Smurf Turf','smurf_turf.jpg'],
+                 ['Tecmo Bowl', 'tecmo.png'],
+                 ['Incognito','spreadsheet.png']]
   
   def current_win_total
     total = 0
