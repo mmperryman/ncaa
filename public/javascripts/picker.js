@@ -1,4 +1,9 @@
 $(function(){
+  //stupid IE doesn't handle change events on selects with jQ live
+  $('select').bind('change',
+    function(){$(this).blur()}
+   );
+   
   init_data_table();	
   handle_wins_overflow();
   $('.team_pick').live('mouseover', function() {
@@ -8,7 +13,7 @@ $(function(){
 	$(this).children('.win_info').hide();
   })
 
-  $(':checkbox').live('change blur', function(){
+  $(':checkbox').live('change', function(){
     if (countChecked($(this))) {
       handle_update_total($(this));
       handle_pick_post($(this));
@@ -24,7 +29,7 @@ function init_data_table() {
 		"sPaginationType": "two_button",
 		"aoColumns":                                                       
       [                                                                  
-      { "bSortable": false,},
+      { "bSortable": false},
       { "bSortable": true},
       { "bSortable": false},
       { "bSortable": true}
