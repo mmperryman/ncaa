@@ -1,9 +1,9 @@
 .rock_on{:style=>"text-align:center;"}
   =image_tag 'medal-gold-3-icon.png'
-  ="60%"
+  ="$#{(User.count - 1) * 20 * 0.6}"
   =image_tag 'medal-silver-3-icon.png'
-  ="30%"
+  ="$#{(User.count - 1) * 20 * 0.3}"
   =image_tag 'medal-bronze-3-icon.png'
-  ="10%"
+  ="$#{(User.count - 1) * 20 * 0.1}"
   =image_tag 'poop.png'
   ="$20"
