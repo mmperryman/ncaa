@@ -1,7 +1,7 @@
 .buttons
   =link_to "Home", root_path, :class => 'standard'
   - if current_user
-    =link_to "My Picks List", :picks, :class => 'negative'
+    =link_to "My Picks", :picks, :class => 'negative'
     -if current_user.admin?
       =link_to "Team List", :teams, :class => 'positive'
       =link_to "Users", :users
@@ -63,6 +63,7 @@
 :javascript 
   $(document).ready(function() {
   	oTable = $('#standings').dataTable({
+      "iDisplayLength": 50,
       "aaSorting": [ [0,'desc'] ],
   		"bJQueryUI": true,
   		"sPaginationType": "two_button",
