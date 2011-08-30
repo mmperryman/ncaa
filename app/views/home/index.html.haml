@@ -12,10 +12,14 @@
   #login_notice You must login in order to select teams.  
 
 %h2{:style=>"text-align:center;"}
-  %span
-    The 2011 season starts in 
-    =distance_of_time_in_words(Time.now, Date.new(2011,9,1)) + ".  "
-    Are you ready?
+  -if Date.today < Date.new(2011,9,1)
+    %span
+      The 2011 season starts in 
+      =distance_of_time_in_words(Time.now, Date.new(2011,9,1)) + ".  "
+      Are you ready?
+  -else
+    %span
+      The 2011 season has begun!
 
 =render 'warning'
 =render 'pot'
