@@ -27,7 +27,7 @@
         %tr{:class => "#{current_user == user ? 'current_login' : ''}"}
           -if user.picks.count == 5
             %td= user.current_win_total
-            %td= user.team_name
+            %td= link_to user.team_name, pick.team.espn_url, :target=>"_blank"
             -user.teams.each do |team|
               %td= "#{team.name}(#{team.current_record.wins.to_s})"
             -if user.prev_win_total > 40
