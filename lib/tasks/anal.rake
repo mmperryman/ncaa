@@ -7,7 +7,7 @@ namespace :anal do
       r = t.records.sort_by(&:period_id)
       a = r[0].wins
       b = r[1].wins
-      puts t.name + "," + b.to_s + "," + a.to_s + "," + (b-a).to_s
+      puts (b-a).to_s + " :: " + t.name + "," + b.to_s + "," + a.to_s + "," + (b-a).to_s
     end
   end    
 end    
