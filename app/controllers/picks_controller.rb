@@ -1,14 +1,15 @@
 class PicksController < ApplicationController
   def index
+    current_period = Period.find_by_year('2012')
     if !current_user
       redirect_to root_path, :error  => "Gotta be logged in!"
     else  
-      @picks = current_user.picks#(:include => :team)
+      @picks = current_user.picks.find_all_by_period_id(current_period) || []
     end  
   end
   
   def create
-    current_period = Period.find_by_year('2011')
+    current_period = Period.find_by_year('2012')
     if params[:_destroy] == 'true'
       @pick = Pick.where('user_id = ? and team_id = ? and period_id = ?', current_user.id, params[:team_id], current_period.id)
       @pick.destroy_all

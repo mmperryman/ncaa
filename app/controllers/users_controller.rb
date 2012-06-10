@@ -44,7 +44,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        @user.payments.create(:period_id => Period.find_by_year('2011').id)
+        @user.payments.create(:period_id => Period.find_by_year('2012').id)
         format.html { redirect_to(root_path, :notice => 'Registration Complete.') }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else

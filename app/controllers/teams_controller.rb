@@ -42,7 +42,7 @@ class TeamsController < ApplicationController
   
   def win
     @team = Team.find(params[:id])
-    record = @team.records.find_by_period_id(Period.find_by_year('2011'))
+    record = @team.records.find_by_period_id(Period.find_by_year('2012'))
     record.update_attribute(:wins, record.wins + 1)
     @team = Team.find(params[:id])
     respond_to do |format|
@@ -52,7 +52,7 @@ class TeamsController < ApplicationController
   
   def loss
     @team = Team.find(params[:id])
-    record = @team.records.find_by_period_id(Period.find_by_year('2011'))
+    record = @team.records.find_by_period_id(Period.find_by_year('2012'))
     record.update_attribute(:wins, record.wins - 1)
     @team = Team.find(params[:id])
     respond_to do |format|

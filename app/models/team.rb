@@ -3,11 +3,11 @@ class Team < ActiveRecord::Base
   belongs_to :picks, :dependent => :destroy
   accepts_nested_attributes_for :records
   def current_record
-    records.where(:period_id => Period.find_by_year('2011')).first
+    records.where(:period_id => Period.find_by_year('2012')).first
   end
   
   def prev_record
-    records.where(:period_id => Period.find_by_year('2010')).first
+    records.where(:period_id => Period.find_by_year('2011')).first
   end
 end
 
