@@ -26,7 +26,8 @@ a:hover {
   background: #CCC;	
 }
 .win_info {
-  display:none;
+/*  display:none;*/
+  font-size:8pt;
   text-align:center;
   font-weight:bold;
 }
@@ -49,7 +50,7 @@ a:hover {
 /* Header */
 #login_wrapper {
   height: 114px;
-  background: transparent url('/images/logo1.png') top center no-repeat;
+  background: transparent url('logo1.png') top center no-repeat;
   position: relative;
 }
 #nav_wrapper {
@@ -67,18 +68,18 @@ a:hover {
 /* Content */
 
 #content_body {
-  background: transparent url('/images/content_bg.png') top center repeat-y;
+  background: transparent url('content_bg.png') top center repeat-y;
   position: relative;
 }
 
 #content_header {
   font-size: 0.01em;
   height: 12px;
-  background: transparent url('/images/content_top.png') top center no-repeat;
+  background: transparent url('content_top.png') top center no-repeat;
 }
 
 #content_footer {
-  background: transparent url('/images/content_bottom.png') top center no-repeat;
+  background: transparent url('content_bottom.png') top center no-repeat;
   height: 12px;
   margin-bottom: 24px;
 }

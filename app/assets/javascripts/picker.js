@@ -6,12 +6,12 @@ $(function(){
    
   init_data_table();	
   handle_wins_overflow();
-  $('.team_pick').live('mouseover', function() {
-	$(this).children('.win_info').show();
-  })
-  $('.team_pick').live('mouseout', function() {
-	$(this).children('.win_info').hide();
-  })
+	//   $('.team_pick').live('mouseover', function() {
+	// $(this).children('.win_info').show();
+	//   })
+	//   $('.team_pick').live('mouseout', function() {
+	// $(this).children('.win_info').hide();
+	//   })
 
   $(':checkbox').live('change', function(){
     if (countChecked($(this))) {

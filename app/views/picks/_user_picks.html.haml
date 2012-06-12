@@ -14,9 +14,9 @@
             .pick.team_pick
               =link_to (image_tag pick.team.logo_url, :size => '100x100', :alt => "#{pick.team.name}"), pick.team.espn_url, :target=>"_blank"
               .win_info
-                ="#{pick.team.name[0..10]}"
+                ="#{pick.team.name[0..14]}"
                 %br
-                ="#{pick.team.records.first.wins} Wins"
+                ="#{pick.team.records.find_by_period_id(Period.find_by_year('2011')).wins} Wins"
         -(5 - @picks.count).times do
           .pick=image_tag 'question-mark.jpg', :size => '100x100'
   .wins_total

@@ -39,6 +39,10 @@ class User < ActiveRecord::Base
     email == "mmperryman@gmail.com"
   end
   
+  def current_picks
+    picks.find_all_by_period_id(Period.find_by_year('2012')) || []
+  end
+  
   def self.find_by_login_or_email(login)
      find_by_login(login) || find_by_email(login)
   end

@@ -4,7 +4,7 @@ class PicksController < ApplicationController
     if !current_user
       redirect_to root_path, :error  => "Gotta be logged in!"
     else  
-      @picks = current_user.picks.find_all_by_period_id(current_period) || []
+      @picks = current_user.current_picks
     end  
   end
   
@@ -16,7 +16,8 @@ class PicksController < ApplicationController
     else  
       @pick = Pick.create(:user_id => current_user.id, :period_id => current_period.id, :team_id => params[:team_id])
     end  
-    @picks = current_user.picks
+    # @picks = current_user.picks
+    @picks = current_user.picks.find_all_by_period_id(current_period) || []
     respond_to do |format|
       format.js
     end

@@ -5,12 +5,12 @@
       %th 
       %th Name
       %th Mascot
-      %th 2010 Wins
+      %th 2011 Wins
   %tbody
     -Team.all.each do |team|
       %tr.result
         %td
-          %input{:type =>'checkbox', :id => "team_#{team.id}", :checked => current_user.picks.map(&:team_id).include?(team.id) ? true : false}
+          %input{:type =>'checkbox', :id => "team_#{team.id}", :checked => current_user.current_picks.map(&:team_id).include?(team.id) ? true : false}
         %td.name_field=link_to team.name, team.espn_url, :target => "_blank"  
         %td.mascot_field= team.mascot
         %td.wins_field= team.prev_record.wins            
