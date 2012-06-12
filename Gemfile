@@ -15,8 +15,9 @@ gem 'heroku'
 gem 'newrelic_rpm'
 gem 'thin'
 gem 'authlogic'
+gem 'therubyracer'
 
 group :development do
 #  gem 'ruby-debug19', :require => 'ruby-debug'
-# gem 'sqlite3'
+  gem 'sqlite3'
 end
