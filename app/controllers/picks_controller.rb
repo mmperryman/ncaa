@@ -16,18 +16,10 @@ class PicksController < ApplicationController
     else  
       @pick = Pick.create(:user_id => current_user.id, :period_id => current_period.id, :team_id => params[:team_id])
     end  
-    # @picks = current_user.picks
-    @picks = current_user.picks.find_all_by_period_id(current_period) || []
+    @picks = current_user.current_picks || []
     respond_to do |format|
       format.js
     end
   end
-  # 
-  # def update_picks
-  #   @picks = current_user.picks
-  #   respond_to do |format|
-  #     format.js
-  #   end
-  # end
 
 end
