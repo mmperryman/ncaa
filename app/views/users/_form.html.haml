@@ -29,7 +29,7 @@
     =f.select :background, options_for_select(User::BACKGROUNDS, :selected => f.object.background)
   -if current_user && current_user.admin?
     .field
-      =f.fields_for :payments, @user.payments.first do |payment_form|
+      =f.fields_for :payments, @user.current_payment do |payment_form|
         =payment_form.label :paid
         =payment_form.check_box :paid
   .actions

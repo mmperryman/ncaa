@@ -21,7 +21,7 @@
       %th
     -@users.each do |user|
       %tr
-        %td=image_tag user.payments.first.paid? ? 'moneybag_24.png' : 'red_x.png'
+        %td=image_tag user.current_payment.paid? ? 'moneybag_24.png' : 'red_x.png'
         %td=user.team_name
         %td= user.email
         %td= user.first + " " + user.last
