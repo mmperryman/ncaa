@@ -24,6 +24,7 @@ $(function(){
 
 function init_data_table() {
   oTable = $('#picker').dataTable({
+	'bRetrieve': true,
     "aaSorting": [ [0,'desc'] ],
 		"bJQueryUI": true,
 		"sPaginationType": "two_button",
