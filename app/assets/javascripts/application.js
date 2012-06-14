@@ -5,6 +5,4 @@
 //= require jquery_ujs
 //= require jquery.dataTables
 //= require jquery.paginate
-//= require picker
-//= require picker_post
 //= require_tree .
