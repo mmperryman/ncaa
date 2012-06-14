@@ -3,7 +3,6 @@
   %head
     %title TheMovingGoalPost.heroku.com
     = stylesheet_link_tag "application"
-    = javascript_include_tag "application"
     = csrf_meta_tag
   %body
     -if current_user && !current_user.background.nil?
