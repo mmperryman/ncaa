@@ -1,8 +1,8 @@
 $(function(){
   //stupid IE doesn't handle change events on selects with jQ live
-  $('select').bind('change',
-    function(){$(this).blur()}
-   );
+  // $('select').bind('change',
+  //   function(){$(this).blur()}
+  //  );
    
   init_data_table();	
   handle_wins_overflow();
