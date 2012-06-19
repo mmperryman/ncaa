@@ -19,6 +19,6 @@ Ncaa::Application.routes.draw do
       get 'win'
       get 'loss'
     end  
-  end   
-  
+  end
+  match "/hof" => "home#hof"
 end

@@ -96,3 +96,19 @@ button.regular, .buttons a.regular{
     border:1px solid #6299c5;
     color:#fff;
 }
+
+/* REGULAR */
+
+button.hof, .buttons a.hof{
+    color:#CFB52B;
+}
+.buttons a.hof:hover, button.hof:hover{
+    background-color:#CFB52B;
+    border:1px solid #CFB52B;
+    color:white;
+}
+.buttons a.hof:active{
+    background-color:#6299c5;
+    border:1px solid white;
+    color:#CFB52B;
+}

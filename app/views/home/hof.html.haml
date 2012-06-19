@@ -1,0 +1,25 @@
+.buttons
+  - if current_user
+    =link_to "My Picks", :picks, :class => 'regular'
+  =link_to "Standings", :standings, :class => 'negative'
+  - if current_user && current_user.admin?
+    =link_to "Users", :users, :class => 'positive'
+    =link_to "Team List", :teams
+  =link_to "HOF", :hof, :class => 'hof'
+%br
+
+
+%br
+%div{:style=>"text-align:center;font-weight:bold"}
+  Our 2011 champ: Toxic Sushi! 
+  %span{:style=>"color:green;font-weight:bold"} ($252)
+  %br
+  =image_tag 'toxic.jpg', :size => '300x400'
+%hr
+  %li
+    %span{:style=>"font-weight:bold"} 01.07
+    The 2011-12 inaugural edition of The Moving Goalpost pool is over, folks.  We had a little bit of a runaway for first - congrats again to Toxic Sushi - and a 3-way tie for 2nd/3rd place between GroceryMan, Blimey's Blogarts, and virtualsupremacy
+    %span{:style=>"color:green;font-weight:bold"} ($42 each).
+    Of course a special round of applause for Stone Cold, bringing home the DFL 
+    %span{:style=>"color:green;font-weight:bold"} ($20).
+  %hr

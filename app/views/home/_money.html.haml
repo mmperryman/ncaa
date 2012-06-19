@@ -4,6 +4,19 @@
     Payout will be 60/30/10.  60% to winner, 30% to second place, 10% to 3rd.  #{ link_to 'DFL', 'http://www.urbandictionary.com/define.php?term=dfl', :target => "_blank"} will get their money back.
     Ties will be split logically.  Payday will be after the BCS title game, or after its mathematically over.
   %p
-    Paypal will charge 2.9% + 30 cents, which shakes out to about 88 cents per $20.  You can pay it or add it in, whatever suits you.  My PayPal account email address is mattp88@ufl.edu.
+    I don't mind if you want to use PayPal, but add in $1 since it will charge a percentage fee.  My Paypal 
   %p
-    =link_to 'PayPal', 'http://www.paypal.com'
+  %form{:action => "https://www.paypal.com/cgi-bin/webscr", :method => "post"}
+    %input{:name => "cmd", :type => "hidden", :value => "_xclick"}
+      %input{:name => "business", :type => "hidden", :value => "mattp88@ufl.edu"}
+        %input{:name => "lc", :type => "hidden", :value => "US"}
+          %input{:name => "item_name", :type => "hidden", :value => "The Moving Goal Post"}
+            %input{:name => "amount", :type => "hidden", :value => "21.00"}
+              %input{:name => "currency_code", :type => "hidden", :value => "USD"}
+                %input{:name => "button_subtype", :type => "hidden", :value => "services"}
+                  %input{:name => "no_note", :type => "hidden", :value => "0"}
+                    %input{:name => "tax_rate", :type => "hidden", :value => "0.000"}
+                      %input{:name => "shipping", :type => "hidden", :value => "0.00"}
+                        %input{:name => "bn", :type => "hidden", :value => "PP-BuyNowBF:btn_paynow_LG.gif:NonHostedGuest"}
+                          %input{:alt => "PayPal - The safer, easier way to pay online!", :border => "0", :name => "submit", :src => "https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif", :type => "image"}
+                          %img{:alt => "", :border => "0", :height => "1", :src => "https://www.paypalobjects.com/en_US/i/scr/pixel.gif", :width => "1"}
