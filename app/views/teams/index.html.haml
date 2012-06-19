@@ -2,6 +2,8 @@
   =link_to "Home", root_path, :class => 'standard'
   =link_to "My Picks List", :picks, :class => 'negative'
   =link_to "Standings", :standings, :class => 'positive'
+  =link_to "Forum", :posts
+  =link_to "HOF", :hof, :class => 'hof'
 %br  
 %br
 %table#team_list{:style=>"width:100%;"}
@@ -10,8 +12,8 @@
       %th Name
       %th Short name
       %th Mascot
-      %th 2010 Wins
       %th 2011 Wins
+      %th 2012 Wins
       -5.times do
         %th
   %tbody    

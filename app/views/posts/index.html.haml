@@ -1,0 +1,18 @@
+=render 'post_buttons'
+%br
+%br
+=link_to "New Post", new_post_path if current_user
+%br
+%br
+-@posts.sort_by(&:updated_at).each do |post|
+  .post
+    %span{:style=>'font-weight:bold'}= post.title
+    %span= "Posted by #{post.user.team_name}" if post.user
+    %span= "on #{post.updated_at.strftime('%m/%d/%Y %I:%M:%p')}"
+    %div{:style=>"margin-left:20px"}
+      = post.content
+      -if current_user.id == post.user_id || current_user.admin?
+        %div
+          =link_to "Edit Post", edit_post_path(post)
+          %a{:href => "/posts/#{post.id}", "data-method" => "delete", "data-confirm" => "Are you sure?"} Delete
+ 

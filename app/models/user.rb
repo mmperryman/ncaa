@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   
   has_many :picks, :dependent => :destroy
   has_many :teams, :through => :picks
+  has_many :posts, :dependent => :destroy  
 
   has_many :payments, :dependent => :destroy
   accepts_nested_attributes_for :payments

@@ -1,10 +1,12 @@
-Hall of Fame
+Hall of Fame - done
 Bulletin Board
-Update Rules
+Team matchups?
+Update Rules - done
 Update FAQ
-Update Paypal
+Update Paypal - done
 Password Recovery gem
 Update page titles
+Razorbacks
 Illinois Zooker FG
 Wide Left FG
 http://www.google.com/imgres?hl=en&safe=off&biw=1362&bih=715&tbm=isch&tbnid=W6PbUaHoyPbo7M:&imgrefurl=http://wn.com/1968_college_football_season&docid=W5C3xe6xrDmv3M&imgurl=http://i.ytimg.com/vi/ezbCtS5-0V8/0.jpg&w=480&h=360&ei=UnPZT4XnD4XO9QSL_6HtBQ&zoom=1&iact=rc&dur=478&sig=101425566079165263546&page=1&tbnh=160&tbnw=232&start=0&ndsp=17&ved=1t:429,r:5,s:0,i:89&tx=138&ty=81

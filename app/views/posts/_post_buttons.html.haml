@@ -1,0 +1,9 @@
+.buttons
+  =link_to "Home", root_path, :class => 'positive'
+  - if current_user
+    =link_to "My Picks", :picks, :class => 'regular'
+  =link_to "Standings", :standings, :class => 'negative'
+  - if current_user && current_user.admin?
+    =link_to "Users", :users, :class => 'positive'
+    =link_to "Team List", :teams
+  =link_to "HOF", :hof, :class => 'hof'

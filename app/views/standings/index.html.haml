@@ -5,6 +5,7 @@
     -if current_user.admin?
       =link_to "Team List", :teams, :class => 'positive'
       =link_to "Users", :users
+  =link_to "Forum", :posts
   =link_to "HOF", :hof, :class => 'hof'
 %br      
 %h1 
@@ -52,14 +53,14 @@
           %td  
   %tfoot
     %tr
-      %th 2011 Wins
+      %th 2012 Wins
       %th Team Name
       %th Team 1
       %th Team 2
       %th Team 3
       %th Team 4
       %th Team 5
-      %th 2010 Wins      
+      %th 2011 Wins      
       
 :javascript 
   $(document).ready(function() {

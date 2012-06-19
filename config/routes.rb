@@ -1,10 +1,10 @@
 Ncaa::Application.routes.draw do
-  get "home/index"
 
-  resources :users, :user_sessions
+
+  resources :users, :user_sessions, :posts
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
-  
+  match "/hof" => "home#hof"
   
   root :to => "home#index"
   resources :picks, :only => [:index, :create, :update, :destroy] do
@@ -20,5 +20,5 @@ Ncaa::Application.routes.draw do
       get 'loss'
     end  
   end
-  match "/hof" => "home#hof"
+  get "home/index", :controller => 'home'
 end
