@@ -6,3 +6,9 @@
 //= require jquery.dataTables
 //= require jquery.paginate
 //= require_tree .
+
+$(function(){
+  $('#hide_toggle').click(function(){
+    $('#hideable_body').toggle('slow');
+  })
+})

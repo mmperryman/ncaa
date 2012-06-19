@@ -1,15 +1,14 @@
-Hall of Fame - done
-Bulletin Board
-Team matchups?
-Update Rules - done
-Update FAQ
-Update Paypal - done
 Password Recovery gem
-Update page titles
-Razorbacks
+Update page titles - ?
+Bulletin Board, needs style
+Team matchups?
 Illinois Zooker FG
-Wide Left FG
-http://www.google.com/imgres?hl=en&safe=off&biw=1362&bih=715&tbm=isch&tbnid=W6PbUaHoyPbo7M:&imgrefurl=http://wn.com/1968_college_football_season&docid=W5C3xe6xrDmv3M&imgurl=http://i.ytimg.com/vi/ezbCtS5-0V8/0.jpg&w=480&h=360&ei=UnPZT4XnD4XO9QSL_6HtBQ&zoom=1&iact=rc&dur=478&sig=101425566079165263546&page=1&tbnh=160&tbnw=232&start=0&ndsp=17&ved=1t:429,r:5,s:0,i:89&tx=138&ty=81
-Spurrier FG
-Tebow uprights
-http://www.google.com/imgres?hl=en&safe=off&sa=X&biw=1362&bih=715&tbm=isch&prmd=imvns&tbnid=K7meg1bptvNUIM:&imgrefurl=http://sportsillustrated.cnn.com/vault/gallery/featured/GAL1193070/7/8/index.htm&docid=2NhhfJ_jaIZPwM&imgurl=http://i.cdn.turner.com/sivault/multimedia/photo_gallery/1112/nfl-tim-tebow-2011-starts/images/120411-tim-tebow.jpg&w=641&h=477&ei=53LZT8K9GJKi8gSSlJ3sBQ&zoom=1&iact=hc&vpx=839&vpy=316&dur=1430&hovh=194&hovw=260&tx=131&ty=100&sig=101425566079165263546&page=3&tbnh=155&tbnw=223&start=37&ndsp=21&ved=1t:429,r:19,s:37,i:256
+______________________
+Hall of Fame - done
+Update Rules - done
+Update FAQ - done
+Update Paypal - done
+Razorbacks - done
+Wide Left FG - done
+Spurrier FG - done
+Tebow uprights - done

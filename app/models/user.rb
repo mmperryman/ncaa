@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
                  ['UCF Knights', 'knights.jpg'],
                  ['Boise Smurf Turf','smurf_turf.jpg'],
                  ['Tecmo Bowl', 'tecmo.png'],
+                 ['Wide Right', 'wide_right.jpg'],
+                 ['Spur Dog', 'spur_dog_millionaire.jpg'],
+                 ['Hallelujah', 'tebow_uprights.jpg'],
+                 ['Pig Sooie!', 'razorbacks.jpg'],
                  ['Incognito','spreadsheet.png']]
   
   def current_win_total

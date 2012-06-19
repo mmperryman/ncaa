@@ -19,10 +19,11 @@
         #content_header
         #content_body
           = render :partial => "layouts/notices"
-          = render :partial => "layouts/page_header" unless @skip_header
-          .page_content  
-            = yield
-            %br
+          #hideable_body
+            = render :partial => "layouts/page_header" unless @skip_header
+            .page_content  
+              = yield
+              %br
         #content_footer
       #footer
         &copy; 
