@@ -102,4 +102,5 @@ class UsersController < ApplicationController
       flash[:notice] = "There was a problem resetting your password."
       render :action => :reset_password
     end
+  end  
 end
