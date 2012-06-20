@@ -1,4 +1,5 @@
 .buttons
+  =link_to "Home", root_path, :class => 'positive'
   - if current_user
     =link_to "My Picks", :picks, :class => 'regular'
   =link_to "Standings", :standings, :class => 'negative'

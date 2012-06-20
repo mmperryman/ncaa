@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-    @posts = Post.all.sort {|a,b| b.updated_at <=> a.updated_at}
+    @posts = Post.all
   end
   
   def new
