@@ -17,3 +17,7 @@
     = f.password_field :password
   .actions
     = f.submit "Submit"
+    |
+    %span= link_to 'Back', root_path
+    |
+    %span= link_to 'Forgot Password?', forgot_password_path

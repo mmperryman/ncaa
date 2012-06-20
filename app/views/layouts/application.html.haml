@@ -18,8 +18,8 @@
         #body_wrapper
         #content_header
         #content_body
-          = render :partial => "layouts/notices"
           #hideable_body
+            = render :partial => "layouts/notices"
             = render :partial => "layouts/page_header" unless @skip_header
             .page_content  
               = yield

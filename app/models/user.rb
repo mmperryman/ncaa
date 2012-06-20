@@ -55,4 +55,8 @@ class User < ActiveRecord::Base
   def self.find_by_login_or_email(login)
      find_by_login(login) || find_by_email(login)
   end
+  
+  def send_forgot_password!
+    Notifier.forgot_password(self).deliver
+  end
 end
