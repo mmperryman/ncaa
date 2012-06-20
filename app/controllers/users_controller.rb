@@ -89,11 +89,11 @@ class UsersController < ApplicationController
   
   # app/controllers/users_controller.rb
   def reset_password
-    @user = User.find(params[:id]) || (raise Exception)
+    @user = User.find_using_persistence_token(params[:reset_password_code]) || (raise Exception)
   end
 
   def reset_password_submit
-    @user = User.find(params[:id]) || (raise Exception)
+    @user = User.find_using_persistence_token(params[:reset_password_code]) || (raise Exception)
     # @user.active = true
     if @user.update_attributes(params[:user].merge({:active => true}))
       flash[:notice] = "Successfully reset password."

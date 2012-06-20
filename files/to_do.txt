@@ -1,5 +1,4 @@
 Password Recovery gem
-Update page titles - ?
 Bulletin Board, needs style
 Team matchups?
 Illinois Zooker FG
