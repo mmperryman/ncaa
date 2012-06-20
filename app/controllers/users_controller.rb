@@ -94,8 +94,7 @@ class UsersController < ApplicationController
 
   def reset_password_submit
     @user = User.find_by_persistence_token(params[:reset_password_code]) || (raise Exception)
-    # @user.active = true
-    if @user.update_attributes(params[:user].merge({:active => true}))
+    if @user.update_attributes(params[:user])
       flash[:notice] = "Successfully reset password."
       redirect_to @user
     else
