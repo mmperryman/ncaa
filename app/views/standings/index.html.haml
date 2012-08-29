@@ -10,8 +10,8 @@
 %br      
 %h1 
   Overall Standings
-%h3{:style=>"color:green"}= "Team picks will be revealed on #{OPENING_DAY.strftime('%A %B %d, %Y')}" if Date.today < OPENING_DAY
-%h3{:style=>"color:green"}= "Last updated on #{Record.find(1208).updated_at.strftime('%A %B %d, %Y')}" if Date.today > OPENING_DAY
+%h3{:style=>"color:green"}= "Team picks will be revealed on #{OPENING_DAY.strftime('%A %B %d, %Y')}" if Time.now < OPENING_DAY
+%h3{:style=>"color:green"}= "Last updated on #{Record.find(1208).updated_at.strftime('%A %B %d, %Y')}" if Time.now > OPENING_DAY
 %table#standings{:style=>"width:100%"}
   %thead
     %tr
@@ -24,7 +24,7 @@
       %th Team 5
       %th 2011 Wins
   %tbody  
-    -if Date.today >= OPENING_DAY
+    -if Time.now >= OPENING_DAY
       -@users.each do |user|
         %tr{:class => "#{current_user == user ? 'current_login' : ''}"}
           -if user.picks.count == 5

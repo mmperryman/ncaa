@@ -14,7 +14,7 @@
   #login_notice You must login in order to select teams.  
 
 %h2{:style=>"text-align:center;"}
-  -if Date.today < OPENING_DAY
+  -if Time.now < OPENING_DAY
     %span
       The 2012 season starts in 
       =distance_of_time_in_words(Time.now, OPENING_DAY) + ".  "
