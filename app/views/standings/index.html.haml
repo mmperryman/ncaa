@@ -27,7 +27,7 @@
     -if Time.now >= OPENING_DAY
       -@users.each do |user|
         %tr{:class => "#{current_user == user ? 'current_login' : ''}"}
-          -if user.picks.count == 5
+          -if user.picks.find_all_by_period_id(7).count == 5
             %td= user.current_win_total
             %td= user.team_name
             -user.teams.each do |team|
