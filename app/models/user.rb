@@ -40,6 +40,14 @@ class User < ActiveRecord::Base
     total
   end
   
+  def current_teams
+    px = []
+    picks.find_all_by_period_id(7).each do |pick|
+      px << pick.team
+    end
+    px  
+  end
+  
   def admin?
     email == "mmperryman@gmail.com"
   end
